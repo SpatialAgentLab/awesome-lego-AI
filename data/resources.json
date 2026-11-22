@@ -1,0 +1,1254 @@
+{
+  "updated": "2026-11-22",
+  "scope": "LEGO / interlocking bricks for AI research",
+  "resources": [
+    {
+      "id": "lego-puzzles",
+      "category": "reasoning",
+      "title": "LEGO-Puzzles: How Good Are MLLMs at Multi-Step Spatial Reasoning?",
+      "year": 2025,
+      "venue": "arXiv; revised 2026",
+      "description": {
+        "en": "Tests spatial understanding and multi-step assembly planning. A natural starting evaluation for MLLMs.",
+        "zh": "评测空间理解与多步搭建规划，适合作为多模态模型的起点评测。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2503.19990",
+        "Code": "https://github.com/Tangkexian/LEGO-Puzzles",
+        "Data": "https://huggingface.co/datasets/KexianTang/LEGO-Puzzles",
+        "Project": "https://tangkexian.github.io/LEGO-Puzzles/"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "LEGO-Puzzles",
+        "modality": "Images + VQA / planning",
+        "scale": "Elementary: 1,100 questions / 11 tasks; Planning: see paper version",
+        "access_en": "Hugging Face; match the downloaded release to the evaluated paper version.",
+        "access_zh": "Hugging Face；下载版本须与所采用论文版本对应。"
+      }
+    },
+    {
+      "id": "tpru",
+      "category": "reasoning",
+      "title": "TPRU: Advancing Temporal and Procedural Understanding in Large Multimodal Models",
+      "year": 2026,
+      "venue": "ICLR 2026",
+      "description": {
+        "en": "Multi-domain temporal reasoning with a LEGO assembly subset; studies ordering, next-frame prediction and previous-frame review.",
+        "zh": "包含 LEGO 装配子集的多领域时序推理工作，覆盖排序、下一帧预测与前序帧回溯。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2602.18884",
+        "Code": "https://github.com/Stephen-gzk/TPRU",
+        "Data": "https://huggingface.co/datasets/Stephengzk/TPRU-25k",
+        "Test": "https://huggingface.co/datasets/Stephengzk/TPRU-test"
+      },
+      "notes": {
+        "en": "The 24,750 training examples are the full multi-domain set, not 24,750 LEGO examples.",
+        "zh": "24,750 是多领域训练集总量，不是 LEGO 子集大小。"
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "TPRU-25k / TPRU-test",
+        "modality": "Frame sequences + temporal QA",
+        "scale": "24,750 training examples across domains",
+        "access_en": "Hugging Face; LEGO source: 36 Arvin Bricks stop-motion videos, as reported in the paper.",
+        "access_zh": "Hugging Face；论文注明 LEGO 源材料为 Arvin Bricks 的 36 个定格动画视频。"
+      }
+    },
+    {
+      "id": "co-builder",
+      "category": "reasoning",
+      "title": "LEGO Co-builder: Exploring Fine-Grained Vision-Language Modeling for Multimodal LEGO Assembly Assistants",
+      "year": 2025,
+      "venue": "arXiv; revised 2026",
+      "description": {
+        "en": "Studies fine-grained instruction following and state recognition in stepwise LEGO scenes.",
+        "zh": "研究分步 LEGO 场景中的细粒度指令遵循与状态识别。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2507.05515",
+        "Code": "https://github.com/peterhuang-coding/LEGO-Co-builder"
+      },
+      "notes": {
+        "en": "Author-linked repository exists, but its README is minimal; dataset packaging and reproduction steps need clarification.",
+        "zh": "作者链接的仓库存在，但 README 很简略；数据打包方式和复现步骤仍需核实。"
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "brick-composer",
+      "category": "reasoning",
+      "title": "Brick-Composer: Using MLLMs for Assembly with Diverse Bricks",
+      "year": 2026,
+      "venue": "arXiv",
+      "description": {
+        "en": "BC-Bench separates brick selection from pose prediction; training combines human designs, simulator feedback and synthetic trajectories.",
+        "zh": "BC-Bench 将选砖与位姿预测分开评测，结合人类设计、仿真反馈和合成轨迹训练。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2606.05445",
+        "Code": "https://github.com/Lumos-Jiateng/Brick-Composer",
+        "Project": "https://lumos-jiateng.github.io/Brick-Composer/",
+        "Data": "https://huggingface.co/datasets/Lumos-Jiateng/brick_synthetic",
+        "Design data": "https://huggingface.co/datasets/Lumos-Jiateng/bricklink_lego_design"
+      },
+      "notes": {
+        "en": "Repository title: “MLLMs Construct Everything from Building Blocks”; this is the same project, not a second paper.",
+        "zh": "仓库使用标题“MLLMs Construct Everything from Building Blocks”，与此条为同一项目。"
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "BC-Bench / Brick-Composer assets",
+        "modality": "Manual renders + brick selection + 6-DoF pose / trajectories",
+        "scale": "See release splits; designer supervision covers 102 human-designed objects",
+        "access_en": "Hugging Face links in the official repository; confirm the benchmark split separately.",
+        "access_zh": "官方仓库提供 Hugging Face 入口；需单独确认 benchmark 的划分。"
+      }
+    },
+    {
+      "id": "brickbench",
+      "category": "reasoning",
+      "title": "BrickBench: Evaluating Agentic Brick Design",
+      "year": 2026,
+      "venue": "arXiv",
+      "description": {
+        "en": "Evaluates text-guided coding agents under model, full-set and fixed-inventory building constraints.",
+        "zh": "评测文本驱动的编程智能体，覆盖小模型、整套搭建与限定零件库存。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2610.12452",
+        "Project": "https://brickben.ch/",
+        "Code": "https://github.com/kulits/BrickAgent",
+        "Data": "https://huggingface.co/datasets/kulits/BrickBench-Runs",
+        "Gallery": "https://gallery.brickben.ch/"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "BrickBench prompts / runs",
+        "modality": "Text prompts + generated assemblies / agent runs",
+        "scale": "300 prompts across 3 settings",
+        "access_en": "Prompts in BrickAgent; run artifacts on Hugging Face.",
+        "access_zh": "题目在 BrickAgent 仓库；运行产物在 Hugging Face。"
+      }
+    },
+    {
+      "id": "dailybrick",
+      "category": "generation",
+      "title": "DailyBrick: Language-Guided Synthesis of Brick Assembly Instructions",
+      "year": 2026,
+      "venue": "arXiv",
+      "description": {
+        "en": "An agentic pipeline generates a brick model and executable stepwise assembly instructions, with review and repair.",
+        "zh": "通过智能体流程生成积木模型与可执行的逐砖说明书，并进行审查和修复。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2611.22132",
+        "Project": "https://spatialagentlab.github.io/DailyBrick.github.io/",
+        "Video": "https://spatialagentlab.github.io/DailyBrick.github.io/assets/dailybrick-demo.mp4"
+      },
+      "notes": {
+        "en": "SpatialAgentLab project. The public website repository is not a verified implementation or dataset release.",
+        "zh": "SpatialAgentLab 项目；公开项目网页仓库不等于算法代码或数据已发布。"
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "brickwright",
+      "category": "generation",
+      "title": "BrickWright: Agentic Creation of Physically Feasible Brick Builds",
+      "year": 2026,
+      "venue": "arXiv",
+      "description": {
+        "en": "Equips pretrained agents with the BrickLayer assembly API and a physical-feasibility validator.",
+        "zh": "为预训练智能体提供 BrickLayer 搭建 API 与物理可行性检查器。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2610.31651",
+        "Project": "https://avalovelace1.github.io/brickwright/",
+        "Code": "https://github.com/AvaLovelace1/brickwright"
+      },
+      "notes": {
+        "en": "Its validator-defined feasibility should not be equated with proof of arbitrary real-robot executability.",
+        "zh": "检查器定义的物理可行性不能直接等同于任意真实机器人都可执行。"
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "bricknet",
+      "category": "generation",
+      "title": "BrickNet: Graph-Backed Generative Brick Assembly",
+      "year": 2026,
+      "venue": "CVPR 2026",
+      "description": {
+        "en": "Generates assemblies using connectivity-based representations over diverse real part types.",
+        "zh": "采用基于连接关系的表示，生成包含多种真实零件类型的积木结构。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2604.22984",
+        "Project": "https://kulits.github.io/BrickNet/",
+        "Code": "https://github.com/kulits/BrickNet",
+        "Data request": "https://forms.gle/dm4eYSa5gh4DqzRT6",
+        "Data documentation": "https://github.com/kulits/BrickNet/blob/master/DATA.md"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "BrickNet",
+        "modality": "LDraw-derived graphs + build paths + captions",
+        "scale": "Paper: over 100,000 human-designed objects / scenes",
+        "access_en": "Dataset access is gated by a request form; code and some part assets are public.",
+        "access_zh": "数据需要通过表单申请；代码和部分零件资产公开。"
+      }
+    },
+    {
+      "id": "brickgpt",
+      "category": "generation",
+      "title": "Generating Physically Stable and Buildable Brick Structures from Text (BrickGPT / LegoGPT)",
+      "year": 2025,
+      "venue": "ICCV 2025",
+      "description": {
+        "en": "Autoregressive text-to-brick generation with validity checks and physics-aware rollback.",
+        "zh": "通过自回归模型、合法性检查和物理约束回退，实现文本到积木结构生成。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2505.05469",
+        "Project": "https://avalovelace1.github.io/BrickGPT/",
+        "Code": "https://github.com/AvaLovelace1/BrickGPT",
+        "Data": "https://huggingface.co/datasets/AvaLovelace/StableText2Brick",
+        "Video page": "https://avalovelace1.github.io/BrickGPT/"
+      },
+      "notes": {
+        "en": "LegoGPT / StableText2Lego are earlier names of BrickGPT / StableText2Brick; do not double-count them.",
+        "zh": "LegoGPT / StableText2Lego 是 BrickGPT / StableText2Brick 的早期名称，不重复计数。"
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "StableText2Brick (formerly StableText2Lego)",
+        "modality": "Brick sequences + text captions",
+        "scale": "Over 47,000 structures / over 28,000 unique objects",
+        "access_en": "Hugging Face; official code links models and generation pipeline.",
+        "access_zh": "Hugging Face；官方代码仓库提供模型和生成流程入口。"
+      }
+    },
+    {
+      "id": "treesba",
+      "category": "generation",
+      "title": "TreeSBA: Tree-Transformer for Self-Supervised Sequential Brick Assembly",
+      "year": 2024,
+      "venue": "ECCV 2024",
+      "description": {
+        "en": "Uses a tree representation and silhouette self-supervision to infer assembly sequences from multiview images.",
+        "zh": "利用树表示与轮廓自监督，从多视角图像预测搭建序列。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2407.15648",
+        "Project": "https://dreamguo.github.io/projects/TreeSBA/",
+        "Code": "https://github.com/dreamguo/TreeSBA",
+        "Video": "https://dreamguo.github.io/projects/TreeSBA/resources/Assembly_Airplane.mp4"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "brick-by-brick",
+      "category": "generation",
+      "title": "Brick-by-Brick: Combinatorial Construction with Deep Reinforcement Learning",
+      "year": 2021,
+      "venue": "NeurIPS 2021",
+      "description": {
+        "en": "Learns sequential brick placement from target images while filtering invalid actions.",
+        "zh": "从目标图像学习逐砖放置，并筛除非法动作。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2110.15481",
+        "Code": "https://github.com/POSTECH-CVLab/Brick-by-Brick"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "image2lego",
+      "category": "generation",
+      "title": "Image2Lego: Customized LEGO Set Generation from Images",
+      "year": 2021,
+      "venue": "arXiv",
+      "description": {
+        "en": "Reconstructs a voxel representation from an image, then converts it into a brick layout and instructions.",
+        "zh": "从图像预测体素表示，再转换为积木布局与搭建说明。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2108.08477"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "graph-lego",
+      "category": "generation",
+      "title": "Building LEGO Using Deep Generative Models of Graphs",
+      "year": 2020,
+      "venue": "NeurIPS 2020 ML4Eng workshop",
+      "description": {
+        "en": "An early graph-generative approach to learning brick structures from human designs.",
+        "zh": "从人类设计中学习积木结构的早期图生成模型。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2012.11543"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "combinatorial3d",
+      "category": "generation",
+      "title": "Combinatorial 3D Shape Generation via Sequential Assembly",
+      "year": 2020,
+      "venue": "NeurIPS 2020 ML4Eng workshop",
+      "description": {
+        "en": "Uses Bayesian optimization to choose sequential placements under geometric and stability objectives.",
+        "zh": "利用贝叶斯优化，在几何和稳定性目标下选择顺序放置动作。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2004.07414",
+        "Code": "https://github.com/POSTECH-CVLab/Combinatorial-3D-Shape-Generation"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "Combinatorial 3D Shape Dataset",
+        "modality": "Primitive structures + generation scripts",
+        "scale": "See repository dataset directory",
+        "access_en": "Dataset and generation scripts are included in the repository.",
+        "access_zh": "仓库内包含数据目录与生成脚本。"
+      }
+    },
+    {
+      "id": "legolization",
+      "category": "generation",
+      "title": "Legolization: Optimizing LEGO Designs",
+      "year": 2015,
+      "venue": "ACM TOG / SIGGRAPH Asia 2015",
+      "description": {
+        "en": "Optimizes brick layouts using force-based stability analysis; foundational geometry-to-brick work.",
+        "zh": "使用基于受力的稳定性分析优化积木布局，是几何模型转积木的重要早期工作。"
+      },
+      "links": {
+        "Paper": "https://www.cs.columbia.edu/~yonghao/siga15/luo-Legolization.pdf",
+        "Video": "https://www.youtube.com/watch?v=Uv5gpqlkpis"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "mepnet",
+      "category": "assembly",
+      "title": "Translating a Visual LEGO Manual to a Machine-Executable Plan (MEPNet)",
+      "year": 2022,
+      "venue": "ECCV 2022",
+      "description": {
+        "en": "Recovers component poses and assembly steps from illustrated manuals.",
+        "zh": "从图解说明书恢复零件位姿与装配步骤。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2207.12572",
+        "Project": "https://cs.stanford.edu/~rcwang/projects/lego_manual/",
+        "Code": "https://github.com/Relento/lego_release",
+        "Data instructions": "https://github.com/Relento/lego_release#evaluation",
+        "Video": "https://cs.stanford.edu/~rcwang/projects/lego_manual/resources/video.mp4"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "MEPNet LEGO manual datasets",
+        "modality": "Manual images + 3D parts / poses",
+        "scale": "Three LEGO manual datasets; see paper",
+        "access_en": "Repository links training, validation and evaluation archives on SharePoint; archives not downloaded here.",
+        "access_zh": "仓库链接 SharePoint 上的训练、验证与评测数据；本次未下载完整压缩包。"
+      }
+    },
+    {
+      "id": "break-make",
+      "category": "assembly",
+      "title": "Break and Make: Interactive Structural Understanding Using LEGO Bricks",
+      "year": 2022,
+      "venue": "ECCV 2022",
+      "description": {
+        "en": "Introduces LTRON: inspect and disassemble a structure, then reconstruct it through low-level actions.",
+        "zh": "提出 LTRON：先观察并拆解结构，再使用低层动作重建。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2207.13738",
+        "Code / simulator": "https://github.com/aaronwalsman/ltron",
+        "Training": "https://github.com/aaronwalsman/ltron-torch"
+      },
+      "notes": {
+        "en": "Use the paper-specific release; the master README warns about unstable development and non-public dependencies.",
+        "zh": "复现应使用对应论文版本；master 的 README 提醒开发版不稳定且存在非公开依赖。"
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "LTRON / Break and Make",
+        "modality": "LDraw models + interactive assembly environment",
+        "scale": "Complex models with over 1,000 distinct brick shapes in the paper",
+        "access_en": "Install assets through LTRON; pin the release associated with the paper.",
+        "access_zh": "通过 LTRON 获取资产；固定与论文对应的版本。"
+      }
+    },
+    {
+      "id": "instructionet",
+      "category": "assembly",
+      "title": "Learning to Build by Building Your Own Instructions (InstructioNet)",
+      "year": 2024,
+      "venue": "ECCV 2024",
+      "description": {
+        "en": "Stores visual instructions during disassembly to support longer-horizon reconstruction.",
+        "zh": "在拆解时保存视觉说明书，支持更长序列的重建。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2410.01111",
+        "Environment / data": "https://github.com/aaronwalsman/ltron/tree/v1.1.0",
+        "Training": "https://github.com/aaronwalsman/ltron-torch/tree/eccv-24"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "LTRON procedural vehicles",
+        "modality": "Procedural models + assembly / disassembly episodes",
+        "scale": "Average 31 bricks; over 100 disassembly/reassembly actions",
+        "access_en": "Use LTRON v1.1.0 and the eccv-24 training branch.",
+        "access_zh": "使用 LTRON v1.1.0 与 eccv-24 训练分支。"
+      }
+    },
+    {
+      "id": "scanet",
+      "category": "assembly",
+      "title": "SCANet: Correcting LEGO Assembly Errors with Self-Correct Assembly Network",
+      "year": 2024,
+      "venue": "IROS 2024",
+      "description": {
+        "en": "Detects incorrect components and predicts assembly corrections from manual images.",
+        "zh": "依据说明书图像检测错装零件并预测修正。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2403.18195",
+        "Data instructions": "https://github.com/kaichen-z/SCANet-Supp",
+        "Video": "https://github.com/kaichen-z/SCANet-Supp/blob/master/assets/Final_2.mp4"
+      },
+      "notes": {
+        "en": "The former project website returned 404; use the official supplement repository and video. Its README Code link points to an MP4, so it is not counted as a verified implementation.",
+        "zh": "旧项目网站返回 404，改用官方补充仓库和演示视频。其 README 的 Code 链接实际指向 MP4，因此不标记为已核实的算法实现。"
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "LEGO-ECA",
+        "modality": "Manual images + erroneous assemblies / corrections",
+        "scale": "1,429 manuals; approximately 120,000 incorrect examples",
+        "access_en": "Official supplement repository links Google Drive / Baidu archives; not downloaded here.",
+        "access_zh": "官方补充仓库提供 Google Drive / 百度网盘；本次未下载完整数据。"
+      }
+    },
+    {
+      "id": "graph-asp",
+      "category": "assembly",
+      "title": "Planning Assembly Sequence with Graph Transformer",
+      "year": 2022,
+      "venue": "arXiv",
+      "description": {
+        "en": "Represents LEGO assemblies as heterogeneous graphs and predicts construction order.",
+        "zh": "将 LEGO 装配表示为异构图并预测搭建顺序。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2210.05236"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "physics-asp",
+      "category": "assembly",
+      "title": "Physics-Aware Combinatorial Assembly Sequence Planning using Data-free Action Masking",
+      "year": 2024,
+      "venue": "IEEE RA-L 2025",
+      "description": {
+        "en": "Reinforcement learning with online physical action masks for executable construction plans.",
+        "zh": "利用在线物理动作掩码约束强化学习，规划可执行搭建序列。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2408.10162",
+        "Code": "https://github.com/intelligent-control-lab/PhysicsAwareCombinatorialASP"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "stablelego",
+      "category": "robotics",
+      "title": "StableLego: Stability Analysis of Block Stacking Assembly",
+      "year": 2024,
+      "venue": "IEEE RA-L 2024",
+      "description": {
+        "en": "Analyzes force balance and structural stability; useful for evaluating generated designs.",
+        "zh": "分析受力平衡与结构稳定性，可用于检查生成的搭建方案。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2402.10711",
+        "Code / data": "https://github.com/intelligent-control-lab/StableLego"
+      },
+      "notes": {
+        "en": "The implementation uses Gurobi; code availability alone does not guarantee a ready-to-run environment.",
+        "zh": "实现依赖 Gurobi；有代码不代表环境可直接运行。"
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "StableLego",
+        "modality": "Voxel grids + assembly JSON + stability scores",
+        "scale": "See upstream release",
+        "access_en": "Download link in official repository; includes stable and unstable examples.",
+        "access_zh": "官方仓库提供下载入口，包含稳定与不稳定结构样本。"
+      }
+    },
+    {
+      "id": "workbenchmark",
+      "category": "robotics",
+      "title": "WorkBenchMark: A LEGO-Based Assembly Benchmark with an Assembly-by-Disassembly Baseline for the Smart Manufacturing League",
+      "year": 2026,
+      "venue": "RoboCup Symposium 2026",
+      "description": {
+        "en": "A Duplo assembly benchmark connecting perception, symbolic planning and manipulation.",
+        "zh": "连接感知、符号规划与操作的 Duplo 装配基准。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2606.19358",
+        "Project": "https://workbenchmark.github.io/",
+        "Data": "https://github.com/WorkBenchMark/dataset",
+        "Video": "https://workbenchmark.github.io/static/videos/demo.mp4"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "WorkBenchMark",
+        "modality": "YAML task specifications + hidden ground truth",
+        "scale": "400 tasks / 4 difficulty tiers",
+        "access_en": "Task files are public; do not expose ground_truth to the solver.",
+        "access_zh": "任务文件已公开；ground_truth 仅供评测，不能作为求解器输入。"
+      }
+    },
+    {
+      "id": "bricksim",
+      "category": "robotics",
+      "title": "BrickSim: A Physics-Based Simulator for Manipulating Interlocking Brick Assemblies",
+      "year": 2026,
+      "venue": "arXiv",
+      "description": {
+        "en": "Simulates interlocking brick manipulation; a useful environment for assembly, disassembly and teleoperation.",
+        "zh": "仿真咬合积木的操作，可用于装配、拆卸与遥操作研究。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2603.16853",
+        "Code": "https://github.com/intelligent-control-lab/BrickSim",
+        "Project": "https://intelligent-control-lab.github.io/BrickSim/",
+        "Video": "https://www.youtube.com/watch?v=VGuHfz4yxLU"
+      },
+      "notes": {
+        "en": "Current upstream quickstart targets x86-64 Linux and NVIDIA / Isaac Sim. No local simulator installation was attempted.",
+        "zh": "当前官方快速入门面向 x86-64 Linux 与 NVIDIA / Isaac Sim；本次没有在本机安装仿真器。"
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "apex-mr",
+      "category": "robotics",
+      "title": "APEX-MR: Multi-Robot Asynchronous Planning and Execution for Cooperative Assembly",
+      "year": 2025,
+      "venue": "RSS 2025",
+      "description": {
+        "en": "Coordinates multiple robots asynchronously for cooperative assembly.",
+        "zh": "通过异步规划与执行协调多个机器人协作装配。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2503.15836",
+        "Project / video": "https://intelligent-control-lab.github.io/APEX-MR/"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "eye-in-finger",
+      "category": "robotics",
+      "title": "Eye-in-Finger: Smart Fingers for Delicate Assembly and Disassembly of LEGO",
+      "year": 2025,
+      "venue": "IROS 2025",
+      "description": {
+        "en": "Studies sensor-equipped fingers for precise brick insertion and removal.",
+        "zh": "研究面向精密积木插接与拆卸的传感手指。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2503.06848",
+        "Lab / video": "https://icontrol.ri.cmu.edu/research/lego.html"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "human-demonstration",
+      "category": "robotics",
+      "title": "Robotic LEGO Assembly and Disassembly from Human Demonstration",
+      "year": 2023,
+      "venue": "arXiv",
+      "description": {
+        "en": "Learns assembly and disassembly from demonstrations and validates execution using a digital twin.",
+        "zh": "从人类演示学习装配与拆卸，并用数字孪生验证执行。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2305.15667",
+        "Lab / video": "https://icontrol.ri.cmu.edu/research/lego.html"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "mobilebrick",
+      "category": "perception",
+      "title": "MobileBrick: Building LEGO for 3D Reconstruction on Mobile Devices",
+      "year": 2023,
+      "venue": "CVPR 2023",
+      "description": {
+        "en": "Mobile RGB-D observations paired with precise geometry for fine-scale reconstruction.",
+        "zh": "移动设备 RGB-D 观测与精确几何配对，用于精细三维重建。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2303.01932",
+        "Code / data": "https://github.com/ActiveVisionLab/MobileBrick",
+        "Project": "https://code.active.vision/MobileBrick/"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "MobileBrick",
+        "modality": "RGB-D + camera poses + masks + ground-truth mesh",
+        "scale": "153 sequences: 135 training + 18 evaluation",
+        "access_en": "Download via official project / repository; reconstruction data, not an assembly-action corpus.",
+        "access_zh": "通过官方项目页／仓库下载；这是重建数据，并非装配动作语料。"
+      }
+    },
+    {
+      "id": "brickflow",
+      "category": "perception",
+      "title": "BrickFlow: Connectivity-Guided Brick Reconstruction",
+      "year": 2026,
+      "venue": "NeurIPS 2026",
+      "description": {
+        "en": "Infers part poses from an image and a given part inventory using SE(3) flow and connectivity guidance.",
+        "zh": "给定图像与零件集合，利用 SE(3) 流模型和连接引导推断零件位姿。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2611.17321",
+        "Project": "https://kulits.github.io/BrickFlow/",
+        "Code": "https://github.com/kulits/BrickFlow",
+        "Data": "https://huggingface.co/datasets/kulits/BrickFlow",
+        "Models": "https://huggingface.co/kulits/BrickFlow"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "BrickFlow",
+        "modality": "Procedural assemblies + image-conditioned reconstruction data",
+        "scale": "See Hugging Face release",
+        "access_en": "Data and model entry points are linked by the official project.",
+        "access_zh": "官方项目链接数据与模型入口。"
+      }
+    },
+    {
+      "id": "photos-renders",
+      "category": "perception",
+      "title": "Photos and rendered images of LEGO bricks",
+      "year": 2023,
+      "venue": "Scientific Data",
+      "description": {
+        "en": "A data descriptor for real and synthetic part images, with part identity and category labels.",
+        "zh": "记录真实照片和合成零件图像的数据论文，包含零件身份与类别标签。"
+      },
+      "links": {
+        "Paper": "https://www.nature.com/articles/s41597-023-02682-2",
+        "Full text": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10657460/"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "Photos and rendered images of LEGO bricks",
+        "modality": "Real photos + renders + part labels / detection subsets",
+        "scale": "Approximately 155,000 photos + 1.5 million renders across the collection",
+        "access_en": "Follow the individual dataset DOIs in the paper; Most Wiedzy may require a normal browser challenge.",
+        "access_zh": "按论文中各子数据集 DOI 获取；Most Wiedzy 可能需要浏览器验证。"
+      }
+    },
+    {
+      "id": "b200c",
+      "category": "data",
+      "title": "B200C LEGO Classification Dataset",
+      "year": 2021,
+      "venue": "",
+      "description": {
+        "en": "Synthetic part-classification images with randomized context, lighting and occlusions.",
+        "zh": "带随机场景、光照和遮挡的合成零件分类图像。"
+      },
+      "links": {
+        "Code / documentation": "https://github.com/korra-pickell/LEGO-Classification-Dataset",
+        "Data": "https://www.kaggle.com/datasets/ronanpickell/b200c-lego-classification-dataset"
+      },
+      "notes": {
+        "en": "The author repository documents the dataset, but the Kaggle URL returned 404 to HEAD and only a script-rendered shell in the web reader; download availability remains unresolved.",
+        "zh": "作者仓库记录了该数据集，但 Kaggle 入口对 HEAD 返回 404，网页读取仅得到脚本页面；当前下载可用性尚未确认。"
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "B200C",
+        "modality": "Synthetic RGB part images",
+        "scale": "800,000 images / 200 classes / 64×64",
+        "access_en": "Author-linked Kaggle page; current download availability not confirmed.",
+        "access_zh": "作者提供 Kaggle 链接；当前能否下载尚未确认。"
+      }
+    },
+    {
+      "id": "conveyor",
+      "category": "data",
+      "title": "Video of LEGO bricks on conveyor belt",
+      "year": 2022,
+      "venue": "",
+      "description": {
+        "en": "Real conveyor-belt videos for part recognition and sorting research.",
+        "zh": "用于零件识别与分拣研究的真实传送带视频。"
+      },
+      "links": {
+        "Data": "https://mostwiedzy.pl/en/open-research-data-series/video-of-lego-bricks-on-conveyor-belt,202011132226557715481-0/catalog",
+        "Descriptor": "https://mostwiedzy.pl/pl/publication/download/1/video-of-lego-bricks-on-conveyor-belt-dataset-series_71732.pdf"
+      },
+      "notes": {
+        "en": "Automated access met an anti-bot page during this review; download availability was not confirmed.",
+        "zh": "本次自动访问遇到反爬页面，未确认能否完成数据下载。"
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "Conveyor-belt videos",
+        "modality": "Real video",
+        "scale": "Multiple dataset records; see catalog",
+        "access_en": "Institutional catalog; browser verification may be required.",
+        "access_zh": "机构目录，可能需要浏览器验证。"
+      }
+    },
+    {
+      "id": "lego-video-archive",
+      "category": "data",
+      "title": "Lego Project Data Archive",
+      "year": 2020,
+      "venue": "",
+      "description": {
+        "en": "Research archive of collaborative LEGO puzzle activity with audiovisual and 360-degree material.",
+        "zh": "协作 LEGO 拼图活动的研究档案，包含音视频与 360 度材料。"
+      },
+      "links": {
+        "Data record": "https://vbn.aau.dk/en/datasets/lego-project-data-archive/"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "Lego Project Data Archive",
+        "modality": "Audio + video + ancillary material",
+        "scale": "See archive records",
+        "access_en": "University record links Zenodo; designed for interaction research, not brick-pose labels.",
+        "access_zh": "大学记录链接 Zenodo；用于交互研究，不提供逐砖位姿标注的保证。"
+      }
+    },
+    {
+      "id": "ldraw-omr",
+      "category": "data",
+      "title": "LDraw Official Model Repository (OMR)",
+      "year": null,
+      "venue": "",
+      "description": {
+        "en": "Community reconstructions of LEGO sets in an interoperable CAD format.",
+        "zh": "以通用 CAD 格式发布的社区 LEGO 套装重建模型。"
+      },
+      "links": {
+        "Models": "https://library.ldraw.org/omr"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "LDraw OMR",
+        "modality": "LDR / MPD models",
+        "scale": "Growing community catalog",
+        "access_en": "Browse model records and per-file terms; models are not automatically validated action trajectories.",
+        "access_zh": "按模型记录和文件条款使用；模型不自动等于已验证动作轨迹。"
+      }
+    },
+    {
+      "id": "rebrickable",
+      "category": "data",
+      "title": "Rebrickable downloads and API",
+      "year": null,
+      "venue": "",
+      "description": {
+        "en": "Structured part, color, set and inventory metadata for joining CAD, manuals and video set IDs.",
+        "zh": "提供零件、颜色、套装和库存元数据，可连接 CAD、说明书与视频套装编号。"
+      },
+      "links": {
+        "Downloads": "https://rebrickable.com/downloads/",
+        "API": "https://rebrickable.com/api/"
+      },
+      "notes": {
+        "en": "Automated browser access was blocked during review; download endpoints and current terms need a manual check.",
+        "zh": "本次自动浏览访问受阻，具体下载入口和当前条款需人工核对。"
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "Rebrickable catalog",
+        "modality": "Tabular metadata / API",
+        "scale": "Continuously updated",
+        "access_en": "Catalog / API, not an annotated vision dataset.",
+        "access_zh": "目录／API，并非带标注的视觉数据集。"
+      }
+    },
+    {
+      "id": "lego-instructions",
+      "category": "data",
+      "title": "LEGO official building instructions",
+      "year": null,
+      "venue": "",
+      "description": {
+        "en": "Set-number lookup for original instruction booklets and step references.",
+        "zh": "按套装编号查找原版说明书和步骤参考。"
+      },
+      "links": {
+        "Instructions": "https://www.lego.com/en-us/service/building-instructions"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "Official building instructions",
+        "modality": "PDF manuals",
+        "scale": "Continuously updated",
+        "access_en": "Official lookup portal; public viewing is separate from redistribution or training permission.",
+        "access_zh": "官方检索入口；公开阅读与再分发／训练授权应分开确认。"
+      }
+    },
+    {
+      "id": "ldraw",
+      "category": "tools",
+      "title": "LDraw parts library and file format",
+      "year": null,
+      "venue": "",
+      "description": {
+        "en": "Core geometry and interchange format for digital brick pipelines.",
+        "zh": "数字积木流程的基础零件几何库与交换格式。"
+      },
+      "links": {
+        "Website": "https://www.ldraw.org/",
+        "Library": "https://library.ldraw.org/"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "leocad",
+      "category": "tools",
+      "title": "LeoCAD",
+      "year": null,
+      "venue": "",
+      "description": {
+        "en": "Open-source LDraw-compatible editor for creating and inspecting brick models.",
+        "zh": "开源且兼容 LDraw 的积木模型编辑与检查工具。"
+      },
+      "links": {
+        "Website": "https://www.leocad.org/",
+        "Code": "https://github.com/leozide/leocad"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "studio",
+      "category": "tools",
+      "title": "BrickLink Studio",
+      "year": null,
+      "venue": "",
+      "description": {
+        "en": "Desktop brick-design tool and instruction authoring ecosystem.",
+        "zh": "桌面积木设计工具与说明书制作生态。"
+      },
+      "links": {
+        "Website": "https://www.bricklink.com/v3/studio/download.page"
+      },
+      "notes": {
+        "en": "The site redirected to a maintenance notice on 2026-11-22. Recheck before installation.",
+        "zh": "2026-11-22 访问跳转到维护公告，安装前需重新确认。"
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "lpub3d",
+      "category": "tools",
+      "title": "LPub3D",
+      "year": null,
+      "venue": "",
+      "description": {
+        "en": "Creates LEGO-style digital building instructions from LDraw models.",
+        "zh": "基于 LDraw 模型制作 LEGO 风格数字搭建说明书。"
+      },
+      "links": {
+        "Code": "https://github.com/trevorsandy/lpub3d"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "importldraw",
+      "category": "tools",
+      "title": "ImportLDraw for Blender",
+      "year": null,
+      "venue": "",
+      "description": {
+        "en": "Imports LDraw parts and models into Blender for rendering.",
+        "zh": "将 LDraw 零件和模型导入 Blender 进行渲染。"
+      },
+      "links": {
+        "Code": "https://github.com/TobyLobster/ImportLDraw"
+      },
+      "notes": {
+        "en": "Check supported Blender versions before building a rendering pipeline.",
+        "zh": "搭建渲染流水线前先核对兼容的 Blender 版本。"
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "bricknet-render",
+      "category": "tools",
+      "title": "BrickNet-Render",
+      "year": 2026,
+      "venue": "",
+      "description": {
+        "en": "Converts LDraw assemblies into Blender scenes for batch rendering.",
+        "zh": "将 LDraw 装配模型转换为 Blender 场景，用于批量渲染。"
+      },
+      "links": {
+        "Code": "https://github.com/kulits/BrickNet-Render"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "brick-renderer",
+      "category": "tools",
+      "title": "BrickRenderer",
+      "year": null,
+      "venue": "",
+      "description": {
+        "en": "Renders realistic training images of individual LDraw pieces.",
+        "zh": "为 LDraw 零件渲染较真实的训练图像。"
+      },
+      "links": {
+        "Code": "https://github.com/spencerhhubert/brick-renderer"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "lego-training-renderer",
+      "category": "tools",
+      "title": "LegoTrainingRenderer",
+      "year": null,
+      "venue": "",
+      "description": {
+        "en": "Blender/Python utilities for RGB renders, masks and normals of LEGO structures.",
+        "zh": "生成 LEGO 结构 RGB 图像、掩码和法线的 Blender／Python 工具。"
+      },
+      "links": {
+        "Code": "https://github.com/WHSnyder/LegoTrainingRenderer"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "vlmevalkit",
+      "category": "tools",
+      "title": "VLMEvalKit LEGO-Puzzles integration",
+      "year": null,
+      "venue": "",
+      "description": {
+        "en": "A common evaluation harness; LEGO-Puzzles documents its LEGO dataset entry.",
+        "zh": "通用多模态评测框架，LEGO-Puzzles 官方文档给出了 LEGO 数据集入口。"
+      },
+      "links": {
+        "Code": "https://github.com/open-compass/VLMEvalKit",
+        "Integration reference": "https://github.com/Tangkexian/LEGO-Puzzles"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "europython",
+      "category": "videos",
+      "title": "Classifying LEGO Bricks with Machine Learning — Piotr Rybak",
+      "year": 2022,
+      "venue": "",
+      "description": {
+        "en": "EuroPython talk covering dataset construction, classification, detection and metric learning.",
+        "zh": "EuroPython 演讲，涵盖数据构建、分类、检测与度量学习。"
+      },
+      "links": {
+        "Video": "https://www.youtube.com/watch?v=bzyG4Wf1Nkc"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "west-sorter",
+      "category": "videos",
+      "title": "The WORLD’S FIRST Universal LEGO Sorting Machine — Daniel West",
+      "year": 2019,
+      "venue": "",
+      "description": {
+        "en": "Creator demonstration of an AI-based part sorter.",
+        "zh": "创作者展示基于 AI 的积木零件分拣机。"
+      },
+      "links": {
+        "Video": "https://www.youtube.com/watch?v=04JkdHEX3Yk"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "west-ai",
+      "category": "videos",
+      "title": "LEGO Sorter AI: How Does It Work? — Daniel West",
+      "year": 2019,
+      "venue": "",
+      "description": {
+        "en": "Creator explanation of the visual-recognition pipeline behind the sorter.",
+        "zh": "创作者解释分拣机背后的视觉识别流程。"
+      },
+      "links": {
+        "Video": "https://www.youtube.com/watch?v=-UGl0ZOCgwQ"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "austrianbrickfan",
+      "category": "videos",
+      "title": "AustrianBrickFan",
+      "year": null,
+      "venue": "",
+      "description": {
+        "en": "Speed-build channel: a candidate source for studying visual construction sequences, after checking each video.",
+        "zh": "搭建速录频道，可逐条筛选用于研究视觉搭建序列的视频。"
+      },
+      "links": {
+        "Channel": "https://www.youtube.com/channel/UCuk26DMu7ewAkC-ntx7esiA"
+      },
+      "notes": {
+        "en": "A viewing/source-discovery link, not a pre-cleared training dataset. Speedups and edits can hide actions.",
+        "zh": "用于观看和发现视频来源，不是已授权训练数据集；加速与剪辑可能隐藏动作。"
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "brickognize",
+      "category": "applications",
+      "title": "Brickognize",
+      "year": null,
+      "venue": "",
+      "description": {
+        "en": "Visual part identification application; the author talk provides technical context.",
+        "zh": "视觉零件识别应用，作者演讲提供技术背景。"
+      },
+      "links": {
+        "App": "https://brickognize.com/",
+        "Author talk": "https://www.youtube.com/watch?v=bzyG4Wf1Nkc"
+      },
+      "notes": {
+        "en": "JavaScript application; included as a product reference, not an open model release.",
+        "zh": "JavaScript 应用；作为产品参考收录，不标作开放模型。"
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "brickit",
+      "category": "applications",
+      "title": "Brickit",
+      "year": null,
+      "venue": "",
+      "description": {
+        "en": "Scans a pile of bricks and proposes builds using the observed inventory.",
+        "zh": "扫描散落积木，并依据识别出的库存推荐搭建方案。"
+      },
+      "links": {
+        "App": "https://brickit.app/"
+      },
+      "notes": {
+        "en": "Product reference; no public training-data release is asserted.",
+        "zh": "产品参考，不据此声称其训练数据已公开。"
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "awesome-ml",
+      "category": "community",
+      "title": "Awesome LEGO Machine Learning",
+      "year": null,
+      "venue": "",
+      "description": {
+        "en": "The inspiration for this list, especially its recognition, sorting and rendering coverage.",
+        "zh": "本仓库的结构参考，尤其是零件识别、分拣与渲染部分。"
+      },
+      "links": {
+        "List": "https://github.com/360er0/awesome-lego-machine-learning"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "awesome-general",
+      "category": "community",
+      "title": "Awesome LEGO",
+      "year": null,
+      "venue": "",
+      "description": {
+        "en": "A broader community index covering the LEGO software and hobby ecosystem.",
+        "zh": "覆盖 LEGO 软件与爱好者生态的综合社区索引。"
+      },
+      "links": {
+        "List": "https://github.com/ad-si/awesome-lego"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    },
+    {
+      "id": "awesome-robot",
+      "category": "community",
+      "title": "Awesome Brick Assembly Robot Creativity",
+      "year": null,
+      "venue": "",
+      "description": {
+        "en": "A complementary research list focused on brick assembly and robotic creativity.",
+        "zh": "聚焦积木装配与机器人创造力的补充研究清单。"
+      },
+      "links": {
+        "List": "https://github.com/intelligent-control-lab/Awesome-Brick-Assembly-Robot-Creativity"
+      },
+      "notes": {
+        "en": "",
+        "zh": ""
+      },
+      "checked": "2026-11-22"
+    }
+  ]
+}

@@ -1,0 +1,839 @@
+{
+  "checked_at": "2026-11-22T07:13:05.021592+00:00",
+  "method": "curl HEAD with redirects; no dataset downloads",
+  "interpretation": "A 2xx status does not prove content, video playback, artifact completeness or reuse rights. 403/429/timeouts may reflect bot protection rather than dead links.",
+  "results": [
+    {
+      "url": "https://arxiv.org/abs/2004.07414",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2004.07414",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2012.11543",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2012.11543",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2108.08477",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2108.08477",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2110.15481",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2110.15481",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2207.12572",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2207.12572",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2207.13738",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2207.13738",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2210.05236",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2210.05236",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2303.01932",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2303.01932",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2305.15667",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2305.15667",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2402.10711",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2402.10711",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2403.18195",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2403.18195",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2407.15648",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2407.15648",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2408.10162",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2408.10162",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2410.01111",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2410.01111",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2503.06848",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2503.06848",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2503.15836",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2503.15836",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2503.19990",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2503.19990",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2505.05469",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2505.05469",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2507.05515",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2507.05515",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2602.18884",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2602.18884",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2603.16853",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2603.16853",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2604.22984",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2604.22984",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2606.05445",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2606.05445",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2606.19358",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2606.19358",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.12452",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2610.12452",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.31651",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2610.31651",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.17321",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2611.17321",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.22132",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2611.22132",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://avalovelace1.github.io/BrickGPT/",
+      "http_status": 200,
+      "effective_url": "https://avalovelace1.github.io/BrickGPT/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://avalovelace1.github.io/brickwright/",
+      "http_status": 200,
+      "effective_url": "https://avalovelace1.github.io/brickwright/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://brickben.ch/",
+      "http_status": 200,
+      "effective_url": "https://brickben.ch/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://brickit.app/",
+      "http_status": 200,
+      "effective_url": "https://brickit.app/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://brickognize.com/",
+      "http_status": 200,
+      "effective_url": "https://brickognize.com/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://code.active.vision/MobileBrick/",
+      "http_status": 200,
+      "effective_url": "https://code.active.vision/MobileBrick/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://cs.stanford.edu/~rcwang/projects/lego_manual/",
+      "http_status": 200,
+      "effective_url": "https://cs.stanford.edu/~rcwang/projects/lego_manual/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://cs.stanford.edu/~rcwang/projects/lego_manual/resources/video.mp4",
+      "http_status": 200,
+      "effective_url": "https://cs.stanford.edu/~rcwang/projects/lego_manual/resources/video.mp4",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://dreamguo.github.io/projects/TreeSBA/",
+      "http_status": 200,
+      "effective_url": "https://dreamguo.github.io/projects/TreeSBA/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://dreamguo.github.io/projects/TreeSBA/resources/Assembly_Airplane.mp4",
+      "http_status": 200,
+      "effective_url": "https://dreamguo.github.io/projects/TreeSBA/resources/Assembly_Airplane.mp4",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://forms.gle/dm4eYSa5gh4DqzRT6",
+      "http_status": 200,
+      "effective_url": "https://docs.google.com/forms/d/e/1FAIpQLSdbXloh_n6NtfKFMSD2OUCTbWOEuCsc8xwx4F3GqUI7ePvbeA/viewform?usp=send_form",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://gallery.brickben.ch/",
+      "http_status": 200,
+      "effective_url": "https://gallery.brickben.ch/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/360er0/awesome-lego-machine-learning",
+      "http_status": 200,
+      "effective_url": "https://github.com/360er0/awesome-lego-machine-learning",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/ActiveVisionLab/MobileBrick",
+      "http_status": 200,
+      "effective_url": "https://github.com/ActiveVisionLab/MobileBrick",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/AvaLovelace1/BrickGPT",
+      "http_status": 200,
+      "effective_url": "https://github.com/AvaLovelace1/BrickGPT",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/AvaLovelace1/brickwright",
+      "http_status": 200,
+      "effective_url": "https://github.com/AvaLovelace1/brickwright",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/Lumos-Jiateng/Brick-Composer",
+      "http_status": 200,
+      "effective_url": "https://github.com/Lumos-Jiateng/Brick-Composer",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/POSTECH-CVLab/Brick-by-Brick",
+      "http_status": 200,
+      "effective_url": "https://github.com/POSTECH-CVLab/Brick-by-Brick",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/POSTECH-CVLab/Combinatorial-3D-Shape-Generation",
+      "http_status": 200,
+      "effective_url": "https://github.com/POSTECH-CVLab/Combinatorial-3D-Shape-Generation",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/Relento/lego_release",
+      "http_status": 200,
+      "effective_url": "https://github.com/Relento/lego_release",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/Relento/lego_release#evaluation",
+      "http_status": 200,
+      "effective_url": "https://github.com/Relento/lego_release#evaluation",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/Stephen-gzk/TPRU",
+      "http_status": 200,
+      "effective_url": "https://github.com/Stephen-gzk/TPRU",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/Tangkexian/LEGO-Puzzles",
+      "http_status": 200,
+      "effective_url": "https://github.com/Tangkexian/LEGO-Puzzles",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/TobyLobster/ImportLDraw",
+      "http_status": 200,
+      "effective_url": "https://github.com/TobyLobster/ImportLDraw",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/WHSnyder/LegoTrainingRenderer",
+      "http_status": 200,
+      "effective_url": "https://github.com/WHSnyder/LegoTrainingRenderer",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/WorkBenchMark/dataset",
+      "http_status": 200,
+      "effective_url": "https://github.com/WorkBenchMark/dataset",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/aaronwalsman/ltron",
+      "http_status": 200,
+      "effective_url": "https://github.com/aaronwalsman/ltron",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/aaronwalsman/ltron-torch",
+      "http_status": 200,
+      "effective_url": "https://github.com/aaronwalsman/ltron-torch",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/aaronwalsman/ltron-torch/tree/eccv-24",
+      "http_status": 200,
+      "effective_url": "https://github.com/aaronwalsman/ltron-torch/tree/eccv-24",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/aaronwalsman/ltron/tree/v1.1.0",
+      "http_status": 200,
+      "effective_url": "https://github.com/aaronwalsman/ltron/tree/v1.1.0",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/ad-si/awesome-lego",
+      "http_status": 200,
+      "effective_url": "https://github.com/ad-si/awesome-lego",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/dreamguo/TreeSBA",
+      "http_status": 200,
+      "effective_url": "https://github.com/dreamguo/TreeSBA",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/intelligent-control-lab/Awesome-Brick-Assembly-Robot-Creativity",
+      "http_status": 200,
+      "effective_url": "https://github.com/intelligent-control-lab/Awesome-Brick-Assembly-Robot-Creativity",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/intelligent-control-lab/BrickSim",
+      "http_status": 200,
+      "effective_url": "https://github.com/intelligent-control-lab/BrickSim",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/intelligent-control-lab/PhysicsAwareCombinatorialASP",
+      "http_status": 200,
+      "effective_url": "https://github.com/intelligent-control-lab/PhysicsAwareCombinatorialASP",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/intelligent-control-lab/StableLego",
+      "http_status": 200,
+      "effective_url": "https://github.com/intelligent-control-lab/StableLego",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/kaichen-z/SCANet-Supp",
+      "http_status": 200,
+      "effective_url": "https://github.com/kaichen-z/SCANet-Supp",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/kaichen-z/SCANet-Supp/blob/master/assets/Final_2.mp4",
+      "http_status": 200,
+      "effective_url": "https://github.com/kaichen-z/SCANet-Supp/blob/master/assets/Final_2.mp4",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/korra-pickell/LEGO-Classification-Dataset",
+      "http_status": 200,
+      "effective_url": "https://github.com/korra-pickell/LEGO-Classification-Dataset",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/kulits/BrickAgent",
+      "http_status": 200,
+      "effective_url": "https://github.com/kulits/BrickAgent",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/kulits/BrickFlow",
+      "http_status": 200,
+      "effective_url": "https://github.com/kulits/BrickFlow",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/kulits/BrickNet",
+      "http_status": 200,
+      "effective_url": "https://github.com/kulits/BrickNet",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/kulits/BrickNet-Render",
+      "http_status": 200,
+      "effective_url": "https://github.com/kulits/BrickNet-Render",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/kulits/BrickNet/blob/master/DATA.md",
+      "http_status": 200,
+      "effective_url": "https://github.com/kulits/BrickNet/blob/master/DATA.md",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/leozide/leocad",
+      "http_status": 200,
+      "effective_url": "https://github.com/leozide/leocad",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/open-compass/VLMEvalKit",
+      "http_status": 200,
+      "effective_url": "https://github.com/open-compass/VLMEvalKit",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/peterhuang-coding/LEGO-Co-builder",
+      "http_status": 200,
+      "effective_url": "https://github.com/peterhuang-coding/LEGO-Co-builder",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/spencerhhubert/brick-renderer",
+      "http_status": 200,
+      "effective_url": "https://github.com/spencerhhubert/brick-renderer",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://github.com/trevorsandy/lpub3d",
+      "http_status": 200,
+      "effective_url": "https://github.com/trevorsandy/lpub3d",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://huggingface.co/datasets/AvaLovelace/StableText2Brick",
+      "http_status": 200,
+      "effective_url": "https://huggingface.co/datasets/AvaLovelace/StableText2Brick",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://huggingface.co/datasets/KexianTang/LEGO-Puzzles",
+      "http_status": 200,
+      "effective_url": "https://huggingface.co/datasets/KexianTang/LEGO-Puzzles",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://huggingface.co/datasets/Lumos-Jiateng/brick_synthetic",
+      "http_status": 200,
+      "effective_url": "https://huggingface.co/datasets/Lumos-Jiateng/Brick-Composer-Data",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://huggingface.co/datasets/Lumos-Jiateng/bricklink_lego_design",
+      "http_status": 200,
+      "effective_url": "https://huggingface.co/datasets/Lumos-Jiateng/bricklink_lego_design",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://huggingface.co/datasets/Stephengzk/TPRU-25k",
+      "http_status": 200,
+      "effective_url": "https://huggingface.co/datasets/Stephengzk/TPRU-25k",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://huggingface.co/datasets/Stephengzk/TPRU-test",
+      "http_status": 200,
+      "effective_url": "https://huggingface.co/datasets/Stephengzk/TPRU-test",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://huggingface.co/datasets/kulits/BrickBench-Runs",
+      "http_status": 200,
+      "effective_url": "https://huggingface.co/datasets/kulits/BrickBench-Runs",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://huggingface.co/datasets/kulits/BrickFlow",
+      "http_status": 200,
+      "effective_url": "https://huggingface.co/datasets/kulits/BrickFlow",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://huggingface.co/kulits/BrickFlow",
+      "http_status": 200,
+      "effective_url": "https://huggingface.co/kulits/BrickFlow",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://icontrol.ri.cmu.edu/research/lego.html",
+      "http_status": 200,
+      "effective_url": "https://icontrol.ri.cmu.edu/research/lego.html",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://intelligent-control-lab.github.io/APEX-MR/",
+      "http_status": 200,
+      "effective_url": "https://intelligent-control-lab.github.io/APEX-MR/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://intelligent-control-lab.github.io/BrickSim/",
+      "http_status": 200,
+      "effective_url": "https://intelligent-control-lab.github.io/BrickSim/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://kulits.github.io/BrickFlow/",
+      "http_status": 200,
+      "effective_url": "https://kulits.github.io/BrickFlow/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://kulits.github.io/BrickNet/",
+      "http_status": 200,
+      "effective_url": "https://kulits.github.io/BrickNet/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://library.ldraw.org/",
+      "http_status": 200,
+      "effective_url": "https://library.ldraw.org/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://library.ldraw.org/omr",
+      "http_status": 200,
+      "effective_url": "https://library.ldraw.org/omr",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://lumos-jiateng.github.io/Brick-Composer/",
+      "http_status": 200,
+      "effective_url": "https://lumos-jiateng.github.io/Brick-Composer/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://mostwiedzy.pl/en/open-research-data-series/video-of-lego-bricks-on-conveyor-belt,202011132226557715481-0/catalog",
+      "http_status": 200,
+      "effective_url": "https://mostwiedzy.pl/en/open-research-data-series/video-of-lego-bricks-on-conveyor-belt,202011132226557715481-0/catalog",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://mostwiedzy.pl/pl/publication/download/1/video-of-lego-bricks-on-conveyor-belt-dataset-series_71732.pdf",
+      "http_status": 200,
+      "effective_url": "https://mostwiedzy.pl/pl/publication/download/1/video-of-lego-bricks-on-conveyor-belt-dataset-series_71732.pdf",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10657460/",
+      "http_status": 200,
+      "effective_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10657460/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://rebrickable.com/api/",
+      "http_status": 200,
+      "effective_url": "https://rebrickable.com/api/v3/docs/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://rebrickable.com/downloads/",
+      "http_status": 200,
+      "effective_url": "https://rebrickable.com/downloads/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://spatialagentlab.github.io/DailyBrick.github.io/",
+      "http_status": 200,
+      "effective_url": "https://spatialagentlab.github.io/DailyBrick.github.io/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://spatialagentlab.github.io/DailyBrick.github.io/assets/dailybrick-demo.mp4",
+      "http_status": 200,
+      "effective_url": "https://spatialagentlab.github.io/DailyBrick.github.io/assets/dailybrick-demo.mp4",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://tangkexian.github.io/LEGO-Puzzles/",
+      "http_status": 200,
+      "effective_url": "https://tangkexian.github.io/LEGO-Puzzles/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://vbn.aau.dk/en/datasets/lego-project-data-archive/",
+      "http_status": 200,
+      "effective_url": "https://vbn.aau.dk/en/datasets/lego-project-data-archive/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://workbenchmark.github.io/",
+      "http_status": 200,
+      "effective_url": "https://workbenchmark.github.io/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://workbenchmark.github.io/static/videos/demo.mp4",
+      "http_status": 200,
+      "effective_url": "https://workbenchmark.github.io/static/videos/demo.mp4",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://www.bricklink.com/v3/studio/download.page",
+      "http_status": 200,
+      "effective_url": "https://maintenance.bricklink.com:443/recovery.html",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://www.cs.columbia.edu/~yonghao/siga15/luo-Legolization.pdf",
+      "http_status": 200,
+      "effective_url": "https://www.cs.columbia.edu/~yonghao/siga15/luo-Legolization.pdf",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://www.kaggle.com/datasets/ronanpickell/b200c-lego-classification-dataset",
+      "http_status": 404,
+      "effective_url": "https://www.kaggle.com/datasets/ronanpickell/b200c-lego-classification-dataset",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://www.ldraw.org/",
+      "http_status": 200,
+      "effective_url": "https://www.ldraw.org/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://www.lego.com/en-us/service/building-instructions",
+      "http_status": 200,
+      "effective_url": "https://www.lego.com/en-us/service/building-instructions",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://www.leocad.org/",
+      "http_status": 200,
+      "effective_url": "https://www.leocad.org/",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://www.nature.com/articles/s41597-023-02682-2",
+      "http_status": 200,
+      "effective_url": "https://www.nature.com/articles/s41597-023-02682-2?error=cookies_not_supported&code=4bcca3a1-f6a0-424b-b331-691c74fe3e43",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://www.youtube.com/channel/UCuk26DMu7ewAkC-ntx7esiA",
+      "http_status": 200,
+      "effective_url": "https://www.youtube.com/channel/UCuk26DMu7ewAkC-ntx7esiA",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=-UGl0ZOCgwQ",
+      "http_status": 200,
+      "effective_url": "https://www.youtube.com/watch?v=-UGl0ZOCgwQ",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=04JkdHEX3Yk",
+      "http_status": 200,
+      "effective_url": "https://www.youtube.com/watch?v=04JkdHEX3Yk",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Uv5gpqlkpis",
+      "http_status": 200,
+      "effective_url": "https://www.youtube.com/watch?v=Uv5gpqlkpis",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=VGuHfz4yxLU",
+      "http_status": 200,
+      "effective_url": "https://www.youtube.com/watch?v=VGuHfz4yxLU",
+      "curl_exit": 0,
+      "error": ""
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=bzyG4Wf1Nkc",
+      "http_status": 200,
+      "effective_url": "https://www.youtube.com/watch?v=bzyG4Wf1Nkc",
+      "curl_exit": 0,
+      "error": ""
+    }
+  ],
+  "manual_notes": {
+    "https://www.kaggle.com/datasets/ronanpickell/b200c-lego-classification-dataset": "Creator repository confirms dataset identity. HEAD returned 404; web reader returned no readable content. Download not confirmed.",
+    "https://www.bricklink.com/v3/studio/download.page": "Redirected to maintenance announcement, not a working product download page.",
+    "https://rebrickable.com/downloads/": "Web reader access restricted; HTTP 200 alone is not content verification.",
+    "https://rebrickable.com/api/": "Web reader access restricted; API use not tested."
+  }
+}
