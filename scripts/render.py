@@ -25,6 +25,58 @@ def links(r):
     return ' · '.join(f'[{label}]({url})' for label, url in r['links'].items())
 
 
+def dataset_overview(lang):
+    """Put all cataloged data resources in the README, with direct access links."""
+    zh = lang == 'zh'
+    groups = [
+        ('Training datasets and paired evaluation splits', '训练数据与配套评测集',
+         ('tpru', 'brickgpt', 'bricknet', 'mepnet', 'scanet', 'mobilebrick',
+          'brickflow', 'stablelego', 'combinatorial3d', 'photos-renders', 'b200c')),
+        ('Benchmarks and interactive task environments', 'Benchmark 与交互任务环境',
+         ('lego-puzzles', 'brick-composer', 'brickbench', 'workbenchmark',
+          'break-make', 'instructionet')),
+        ('Source material for building datasets', '构建数据集的原始素材',
+         ('conveyor', 'lego-video-archive', 'ldraw-omr', 'lego-instructions', 'rebrickable')),
+    ]
+    by_id = {r['id']: r for r in RESOURCES if 'dataset' in r}
+    grouped = [key for _, _, keys in groups for key in keys]
+    if len(grouped) != len(set(grouped)) or set(grouped) != set(by_id):
+        raise ValueError('README data groups must cover every dataset exactly once')
+    lines = ['<a id="datasets-benchmarks"></a>', '',
+             '## ' + ('训练数据与 Benchmark' if zh else 'Training datasets and benchmarks'), '']
+    if zh:
+        lines += [
+            f'**数据优先：以下在正文汇总全部 {len(by_id)} 个数据／基准条目，提供任务、规模、获取状态和原始入口。** 数据与配套测试集、独立 benchmark、原始素材分别列出；部分项目同时支持训练与评测。', '',
+            '**按任务定位：** 空间推理看 [LEGO-Puzzles](#lego-puzzles)；时序理解看 [TPRU 的 LEGO 子集](#tpru)；文本到结构看 [StableText2Brick](#brickgpt) / [BrickNet](#bricknet)；说明书与纠错看 [MEPNet](#mepnet) / [LEGO-ECA](#scanet)；生成评测看 [BrickBench](#brickbench)。', '',
+            '规模沿用原始发布记录，不代表本地下载核验后的可用训练量，也不能跨条目直接相加。**TPRU 的 24,750 条是多领域训练总量，并非 LEGO 子集大小。** 更完整的选用、划分与许可注意事项见 [数据子文档](docs/DATASETS.md)。', '',
+        ]
+    else:
+        lines += [
+            f'**Data first: all {len(by_id)} data / benchmark entries are listed here with tasks, reported scale, access status and source links.** Datasets with paired evaluation splits, standalone benchmarks and source material are grouped separately; some projects support both training and evaluation.', '',
+            '**Find data by task:** [LEGO-Puzzles](#lego-puzzles) for spatial reasoning; the [LEGO subset of TPRU](#tpru) for temporal understanding; [StableText2Brick](#brickgpt) / [BrickNet](#bricknet) for text-to-structure; [MEPNet](#mepnet) / [LEGO-ECA](#scanet) for manuals and correction; [BrickBench](#brickbench) for generation evaluation.', '',
+            'Counts come from the source releases, not verified local downloads, and should not be summed across entries. **TPRU contains 24,750 training examples across domains; this is not the size of its LEGO subset.** See the [dataset companion](docs/DATASETS.md) for selection, split and licensing notes.', '',
+        ]
+    for en, cn, keys in groups:
+        lines += [f'### {cn if zh else en}', '']
+        if zh:
+            lines += ['| 数据／基准 | 模态与任务 | 报告规模 | 获取状态 | 数据／原始入口 |']
+        else:
+            lines += ['| Dataset / benchmark | Modality / task | Reported scale | Access status | Data / source |']
+        lines += ['| --- | --- | --- | --- | --- |']
+        for key in keys:
+            r = by_id[key]
+            d = r['dataset']
+            sources = {k: v for k, v in r['links'].items()
+                       if 'data' in k.lower() or k in ('Test', 'Models', 'Downloads', 'API', 'Instructions', 'Code')}
+            if not sources:
+                sources = {k: v for k, v in r['links'].items()
+                           if k in ('Code', 'Code / simulator', 'Training', 'Full text')}
+            source_links = ' · '.join(f'[{k}]({v})' for k, v in sources.items())
+            lines.append(f'| [{d["name"]}](#{key}) | {d["modality"]} | {d["scale"]} | {d["access_zh" if zh else "access_en"]} | {source_links} |')
+        lines += ['']
+    return lines
+
+
 def readme(lang):
     zh = lang == 'zh'
     n_papers = sum('Paper' in r['links'] for r in RESOURCES)
@@ -35,7 +87,7 @@ def readme(lang):
             '面向 **LEGO / 咬合积木 × AI** 的研究资源清单：从空间与时序推理，到说明书理解、三维生成、装配规划和机器人执行。', '',
             f'最近整理：**{CATALOG["updated"]}**。共 **{len(RESOURCES)} 个独立条目**，其中 **{n_papers} 篇论文**、**{n_data} 个数据／基准条目**。同一项目可同时提供论文、数据、代码和视频，不重复计为独立项目。', '',
             '优先收录原论文、作者项目页、官方代码和数据入口。年份优先采用首个预印本年份，正式发表信息另列；摘要为本清单重新撰写。链接核对不等于代码复现或数据完整下载。', '',
-            '**从这里开始：** [数据对照表](docs/DATASETS.md) · [中文阅读路线与研究切入点](docs/RESEARCH_GUIDE.zh-CN.md) · [BibTeX](papers.bib) · [机器可读目录](data/resources.json) · [核验说明](docs/VERIFICATION.md)', '',
+            '**从这里开始：** [训练数据与 Benchmark](#datasets-benchmarks) · [中文阅读路线与研究切入点](docs/RESEARCH_GUIDE.zh-CN.md) · [BibTeX](papers.bib) · [机器可读目录](data/resources.json) · [核验说明](docs/VERIFICATION.md)', '',
             '## 快速选读', '',
             '| 目标 | 建议起点 |', '| --- | --- |',
             '| 多模态空间／时序推理 | [LEGO-Puzzles](#lego-puzzles) → [TPRU](#tpru) → [Brick-Composer](#brick-composer) |',
@@ -50,7 +102,7 @@ def readme(lang):
             'A curated research list for **LEGO / interlocking bricks × AI**: spatial and temporal reasoning, visual manuals, 3D generation, assembly planning, and robot execution.', '',
             f'Last curated: **{CATALOG["updated"]}**. **{len(RESOURCES)} unique entries**, including **{n_papers} papers** and **{n_data} data / benchmark entries**. A project may provide several artifact types; these counts overlap.', '',
             'We prioritize original papers, author project pages, official repositories and dataset records. Years generally indicate the first preprint, with publication venues listed separately. Descriptions are original summaries. Link review does not imply successful reproduction or complete dataset download.', '',
-            '**Start here:** [Dataset matrix](docs/DATASETS.md) · [Chinese research guide](docs/RESEARCH_GUIDE.zh-CN.md) · [BibTeX](papers.bib) · [Machine-readable catalog](data/resources.json) · [Verification notes](docs/VERIFICATION.md)', '',
+            '**Start here:** [Training datasets and benchmarks](#datasets-benchmarks) · [Chinese research guide](docs/RESEARCH_GUIDE.zh-CN.md) · [BibTeX](papers.bib) · [Machine-readable catalog](data/resources.json) · [Verification notes](docs/VERIFICATION.md)', '',
             '## Start here', '',
             '| Goal | Suggested reading |', '| --- | --- |',
             '| Multimodal spatial / temporal reasoning | [LEGO-Puzzles](#lego-puzzles) → [TPRU](#tpru) → [Brick-Composer](#brick-composer) |',
@@ -60,6 +112,9 @@ def readme(lang):
             '| Real robots | [StableLego](#stablelego) → [BrickSim](#bricksim) → [WorkBenchMark](#workbenchmark) |', '',
             '## Contents', '',
         ]
+    overview_index = lines.index('## 快速选读' if zh else '## Start here')
+    lines[overview_index:overview_index] = dataset_overview(lang)
+    lines.append('- [' + ('训练数据与 Benchmark' if zh else 'Training datasets and benchmarks') + '](#datasets-benchmarks)')
     for key, en, cn in CATEGORIES:
         lines.append(f'- [{cn if zh else en}](#{key})')
     lines += [f'- [{"论文演示视频速查" if zh else "Research demo videos"}](#research-videos)', '',

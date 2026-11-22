@@ -8,7 +8,54 @@ Last curated: **2026-11-22**. **54 unique entries**, including **30 papers** and
 
 We prioritize original papers, author project pages, official repositories and dataset records. Years generally indicate the first preprint, with publication venues listed separately. Descriptions are original summaries. Link review does not imply successful reproduction or complete dataset download.
 
-**Start here:** [Dataset matrix](docs/DATASETS.md) · [Chinese research guide](docs/RESEARCH_GUIDE.zh-CN.md) · [BibTeX](papers.bib) · [Machine-readable catalog](data/resources.json) · [Verification notes](docs/VERIFICATION.md)
+**Start here:** [Training datasets and benchmarks](#datasets-benchmarks) · [Chinese research guide](docs/RESEARCH_GUIDE.zh-CN.md) · [BibTeX](papers.bib) · [Machine-readable catalog](data/resources.json) · [Verification notes](docs/VERIFICATION.md)
+
+<a id="datasets-benchmarks"></a>
+
+## Training datasets and benchmarks
+
+**Data first: all 22 data / benchmark entries are listed here with tasks, reported scale, access status and source links.** Datasets with paired evaluation splits, standalone benchmarks and source material are grouped separately; some projects support both training and evaluation.
+
+**Find data by task:** [LEGO-Puzzles](#lego-puzzles) for spatial reasoning; the [LEGO subset of TPRU](#tpru) for temporal understanding; [StableText2Brick](#brickgpt) / [BrickNet](#bricknet) for text-to-structure; [MEPNet](#mepnet) / [LEGO-ECA](#scanet) for manuals and correction; [BrickBench](#brickbench) for generation evaluation.
+
+Counts come from the source releases, not verified local downloads, and should not be summed across entries. **TPRU contains 24,750 training examples across domains; this is not the size of its LEGO subset.** See the [dataset companion](docs/DATASETS.md) for selection, split and licensing notes.
+
+### Training datasets and paired evaluation splits
+
+| Dataset / benchmark | Modality / task | Reported scale | Access status | Data / source |
+| --- | --- | --- | --- | --- |
+| [TPRU-25k / TPRU-test](#tpru) | Frame sequences + temporal QA | 24,750 training examples across domains | Hugging Face; LEGO source: 36 Arvin Bricks stop-motion videos, as reported in the paper. | [Code](https://github.com/Stephen-gzk/TPRU) · [Data](https://huggingface.co/datasets/Stephengzk/TPRU-25k) · [Test](https://huggingface.co/datasets/Stephengzk/TPRU-test) |
+| [StableText2Brick (formerly StableText2Lego)](#brickgpt) | Brick sequences + text captions | Over 47,000 structures / over 28,000 unique objects | Hugging Face; official code links models and generation pipeline. | [Code](https://github.com/AvaLovelace1/BrickGPT) · [Data](https://huggingface.co/datasets/AvaLovelace/StableText2Brick) |
+| [BrickNet](#bricknet) | LDraw-derived graphs + build paths + captions | Paper: over 100,000 human-designed objects / scenes | Dataset access is gated by a request form; code and some part assets are public. | [Code](https://github.com/kulits/BrickNet) · [Data request](https://forms.gle/dm4eYSa5gh4DqzRT6) · [Data documentation](https://github.com/kulits/BrickNet/blob/master/DATA.md) |
+| [MEPNet LEGO manual datasets](#mepnet) | Manual images + 3D parts / poses | Three LEGO manual datasets; see paper | Repository links training, validation and evaluation archives on SharePoint; archives not downloaded here. | [Code](https://github.com/Relento/lego_release) · [Data instructions](https://github.com/Relento/lego_release#evaluation) |
+| [LEGO-ECA](#scanet) | Manual images + erroneous assemblies / corrections | 1,429 manuals; approximately 120,000 incorrect examples | Official supplement repository links Google Drive / Baidu archives; not downloaded here. | [Data instructions](https://github.com/kaichen-z/SCANet-Supp) |
+| [MobileBrick](#mobilebrick) | RGB-D + camera poses + masks + ground-truth mesh | 153 sequences: 135 training + 18 evaluation | Download via official project / repository; reconstruction data, not an assembly-action corpus. | [Code / data](https://github.com/ActiveVisionLab/MobileBrick) |
+| [BrickFlow](#brickflow) | Procedural assemblies + image-conditioned reconstruction data | See Hugging Face release | Data and model entry points are linked by the official project. | [Code](https://github.com/kulits/BrickFlow) · [Data](https://huggingface.co/datasets/kulits/BrickFlow) · [Models](https://huggingface.co/kulits/BrickFlow) |
+| [StableLego](#stablelego) | Voxel grids + assembly JSON + stability scores | See upstream release | Download link in official repository; includes stable and unstable examples. | [Code / data](https://github.com/intelligent-control-lab/StableLego) |
+| [Combinatorial 3D Shape Dataset](#combinatorial3d) | Primitive structures + generation scripts | See repository dataset directory | Dataset and generation scripts are included in the repository. | [Code](https://github.com/POSTECH-CVLab/Combinatorial-3D-Shape-Generation) |
+| [Photos and rendered images of LEGO bricks](#photos-renders) | Real photos + renders + part labels / detection subsets | Approximately 155,000 photos + 1.5 million renders across the collection | Follow the individual dataset DOIs in the paper; Most Wiedzy may require a normal browser challenge. | [Full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC10657460/) |
+| [B200C](#b200c) | Synthetic RGB part images | 800,000 images / 200 classes / 64×64 | Author-linked Kaggle page; current download availability not confirmed. | [Data](https://www.kaggle.com/datasets/ronanpickell/b200c-lego-classification-dataset) |
+
+### Benchmarks and interactive task environments
+
+| Dataset / benchmark | Modality / task | Reported scale | Access status | Data / source |
+| --- | --- | --- | --- | --- |
+| [LEGO-Puzzles](#lego-puzzles) | Images + VQA / planning | Elementary: 1,100 questions / 11 tasks; Planning: see paper version | Hugging Face; match the downloaded release to the evaluated paper version. | [Code](https://github.com/Tangkexian/LEGO-Puzzles) · [Data](https://huggingface.co/datasets/KexianTang/LEGO-Puzzles) |
+| [BC-Bench / Brick-Composer assets](#brick-composer) | Manual renders + brick selection + 6-DoF pose / trajectories | See release splits; designer supervision covers 102 human-designed objects | Hugging Face links in the official repository; confirm the benchmark split separately. | [Code](https://github.com/Lumos-Jiateng/Brick-Composer) · [Data](https://huggingface.co/datasets/Lumos-Jiateng/brick_synthetic) · [Design data](https://huggingface.co/datasets/Lumos-Jiateng/bricklink_lego_design) |
+| [BrickBench prompts / runs](#brickbench) | Text prompts + generated assemblies / agent runs | 300 prompts across 3 settings | Prompts in BrickAgent; run artifacts on Hugging Face. | [Code](https://github.com/kulits/BrickAgent) · [Data](https://huggingface.co/datasets/kulits/BrickBench-Runs) |
+| [WorkBenchMark](#workbenchmark) | YAML task specifications + hidden ground truth | 400 tasks / 4 difficulty tiers | Task files are public; do not expose ground_truth to the solver. | [Data](https://github.com/WorkBenchMark/dataset) |
+| [LTRON / Break and Make](#break-make) | LDraw models + interactive assembly environment | Complex models with over 1,000 distinct brick shapes in the paper | Install assets through LTRON; pin the release associated with the paper. | [Code / simulator](https://github.com/aaronwalsman/ltron) · [Training](https://github.com/aaronwalsman/ltron-torch) |
+| [LTRON procedural vehicles](#instructionet) | Procedural models + assembly / disassembly episodes | Average 31 bricks; over 100 disassembly/reassembly actions | Use LTRON v1.1.0 and the eccv-24 training branch. | [Environment / data](https://github.com/aaronwalsman/ltron/tree/v1.1.0) |
+
+### Source material for building datasets
+
+| Dataset / benchmark | Modality / task | Reported scale | Access status | Data / source |
+| --- | --- | --- | --- | --- |
+| [Conveyor-belt videos](#conveyor) | Real video | Multiple dataset records; see catalog | Institutional catalog; browser verification may be required. | [Data](https://mostwiedzy.pl/en/open-research-data-series/video-of-lego-bricks-on-conveyor-belt,202011132226557715481-0/catalog) |
+| [Lego Project Data Archive](#lego-video-archive) | Audio + video + ancillary material | See archive records | University record links Zenodo; designed for interaction research, not brick-pose labels. | [Data record](https://vbn.aau.dk/en/datasets/lego-project-data-archive/) |
+| [LDraw OMR](#ldraw-omr) | LDR / MPD models | Growing community catalog | Browse model records and per-file terms; models are not automatically validated action trajectories. | [Models](https://library.ldraw.org/omr) |
+| [Official building instructions](#lego-instructions) | PDF manuals | Continuously updated | Official lookup portal; public viewing is separate from redistribution or training permission. | [Instructions](https://www.lego.com/en-us/service/building-instructions) |
+| [Rebrickable catalog](#rebrickable) | Tabular metadata / API | Continuously updated | Catalog / API, not an annotated vision dataset. | [Downloads](https://rebrickable.com/downloads/) · [API](https://rebrickable.com/api/) |
 
 ## Start here
 
@@ -22,6 +69,7 @@ We prioritize original papers, author project pages, official repositories and d
 
 ## Contents
 
+- [Training datasets and benchmarks](#datasets-benchmarks)
 - [Spatial and procedural reasoning](#reasoning)
 - [Generative design and brickification](#generation)
 - [Manual understanding and assembly planning](#assembly)
