@@ -828,6 +828,230 @@
       "effective_url": "https://www.youtube.com/watch?v=bzyG4Wf1Nkc",
       "curl_exit": 0,
       "error": ""
+    },
+    {
+      "url": "https://arxiv.org/abs/2605.26182",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2605.26182",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.04292",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2610.04292",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://arxiv.org/abs/2610.27618",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2610.27618",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://arxiv.org/abs/2611.08485",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/abs/2611.08485",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://arxiv.org/html/2610.27618v1",
+      "http_status": 200,
+      "effective_url": "https://arxiv.org/html/2610.27618v1",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://doi.org/10.1145/3757377.3763881",
+      "http_status": 403,
+      "effective_url": "https://dl.acm.org/doi/10.1145/3757377.3763881",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://elorian.ai/blog/why-grounding",
+      "http_status": 200,
+      "effective_url": "https://elorian.ai/blog/why-grounding",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://github.com/Lumos-Jiateng/LMBuild",
+      "http_status": 200,
+      "effective_url": "https://github.com/Lumos-Jiateng/LMBuild",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://github.com/VAST-AI-Research/LegoACE",
+      "http_status": 200,
+      "effective_url": "https://github.com/VAST-AI-Research/LegoACE",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://github.com/ZEISS/PIXIE-dataset",
+      "http_status": 200,
+      "effective_url": "https://github.com/ZEISS/PIXIE-dataset",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://github.com/ZEISS/PIXIE-dataset/tree/main/dataset",
+      "http_status": 200,
+      "effective_url": "https://github.com/ZEISS/PIXIE-dataset/tree/main/dataset",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://github.com/elorian-ai/why-grounding",
+      "http_status": 200,
+      "effective_url": "https://github.com/elorian-ai/why-grounding",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://github.com/kulits/ProcBrick",
+      "http_status": 200,
+      "effective_url": "https://github.com/kulits/ProcBrick",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://github.com/withtally/brickagi",
+      "http_status": 200,
+      "effective_url": "https://github.com/withtally/brickagi",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://github.com/withtally/brickagi/blob/main/brickagi/tasks/INDEX.md",
+      "http_status": 200,
+      "effective_url": "https://github.com/withtally/brickagi/blob/main/brickagi/tasks/INDEX.md",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://github.com/xjtunzy/BrickAnything",
+      "http_status": 200,
+      "effective_url": "https://github.com/xjtunzy/BrickAnything",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://huggingface.co/VAST-AI/LegoACE",
+      "http_status": 200,
+      "effective_url": "https://huggingface.co/VAST-AI/LegoACE",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://huggingface.co/datasets/DylanRiden/sets_lego_omr_full",
+      "http_status": 200,
+      "effective_url": "https://huggingface.co/datasets/DylanRiden/sets_lego_omr_full",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://huggingface.co/datasets/Lumos-Jiateng/LMBuild",
+      "http_status": 200,
+      "effective_url": "https://huggingface.co/datasets/Lumos-Jiateng/LMBuild",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://huggingface.co/datasets/airoa-org/yubi-corl2026-umi-arena",
+      "http_status": 200,
+      "effective_url": "https://huggingface.co/datasets/airoa-org/yubi-corl2026-umi-arena",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://huggingface.co/datasets/ajaysri/lego_flat_final_goal_200_v1",
+      "http_status": 200,
+      "effective_url": "https://huggingface.co/datasets/ajaysri/lego_flat_final_goal_200_v1",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://huggingface.co/datasets/ajaysri/lego_flat_final_goal_200_v1/blob/main/meta/info.json",
+      "http_status": 200,
+      "effective_url": "https://huggingface.co/datasets/ajaysri/lego_flat_final_goal_200_v1/blob/main/meta/info.json",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://huggingface.co/datasets/elorian-ai/BrickVision",
+      "http_status": 200,
+      "effective_url": "https://huggingface.co/datasets/elorian-ai/BrickVision",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://huggingface.co/datasets/elorian-ai/why-grounding",
+      "http_status": 200,
+      "effective_url": "https://huggingface.co/datasets/elorian-ai/why-grounding",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://huggingface.co/niels-peter/BrickAnything",
+      "http_status": 200,
+      "effective_url": "https://huggingface.co/niels-peter/BrickAnything",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://lumos-jiateng.github.io/LMBuild/",
+      "http_status": 200,
+      "effective_url": "https://lumos-jiateng.github.io/LMBuild/",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://umi-arena.airoa.io/",
+      "http_status": 200,
+      "effective_url": "https://umi-arena.airoa.io/",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
+    },
+    {
+      "url": "https://xh38.github.io/LegoACE/",
+      "http_status": 200,
+      "effective_url": "https://xh38.github.io/LegoACE/",
+      "curl_exit": 0,
+      "error": "",
+      "checked_at": "2026-11-22T14:49:41.122034+00:00"
     }
   ],
   "manual_notes": {
@@ -835,5 +1059,6 @@
     "https://www.bricklink.com/v3/studio/download.page": "Redirected to maintenance announcement, not a working product download page.",
     "https://rebrickable.com/downloads/": "Web reader access restricted; HTTP 200 alone is not content verification.",
     "https://rebrickable.com/api/": "Web reader access restricted; API use not tested."
-  }
+  },
+  "last_incremental_check": "2026-11-22T14:49:41.122034+00:00"
 }

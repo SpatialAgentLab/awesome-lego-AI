@@ -4,7 +4,7 @@
 
 面向 **LEGO / 咬合积木 × AI** 的研究资源清单：从空间与时序推理，到说明书理解、三维生成、装配规划和机器人执行。
 
-最近整理：**2026-11-22**。共 **54 个独立条目**，其中 **30 篇论文**、**22 个数据／基准条目**。同一项目可同时提供论文、数据、代码和视频，不重复计为独立项目。
+最近整理：**2026-11-22**。共 **64 个独立条目**，其中 **35 篇论文**、**29 个数据／基准条目**。同一项目可同时提供论文、数据、代码和视频，不重复计为独立项目。
 
 优先收录原论文、作者项目页、官方代码和数据入口。年份优先采用首个预印本年份，正式发表信息另列；摘要为本清单重新撰写。链接核对不等于代码复现或数据完整下载。
 
@@ -14,7 +14,9 @@
 
 ## 训练数据与 Benchmark
 
-**数据优先：以下在正文汇总全部 22 个数据／基准条目，提供任务、规模、获取状态和原始入口。** 数据与配套测试集、独立 benchmark、原始素材分别列出；部分项目同时支持训练与评测。
+**数据优先：以下在正文汇总全部 29 个数据／基准条目，提供任务、规模、获取状态和原始入口。** 数据与配套测试集、独立 benchmark、原始素材分别列出；部分项目同时支持训练与评测。
+
+**本轮更新（2026-11-22）：** 新增 [BrickVision（11 月）](#brickvision)、[LMBuild（10 月）](#lmbuild)、[PIXIE](#pixie)、[仿真装配示范](#lego-flat200)、[YUBI（受限访问）](#yubi-umi-arena)、[OMR 整合包](#omr-rebrickable) 和 [BrickAGI（社区）](#brickagi)；补全 [BrickFlow / ProcBrick](#brickflow) 的 1 亿结构预训练集、100 万微调渲染图与评测划分。表格末尾另列尚未确认下载的数据线索，不计入上述数据条目。
 
 **按任务定位：** 空间推理看 [LEGO-Puzzles](#lego-puzzles)；时序理解看 [TPRU 的 LEGO 子集](#tpru)；文本到结构看 [StableText2Brick](#brickgpt) / [BrickNet](#bricknet)；说明书与纠错看 [MEPNet](#mepnet) / [LEGO-ECA](#scanet)；生成评测看 [BrickBench](#brickbench)。
 
@@ -24,13 +26,15 @@
 
 | 数据／基准 | 模态与任务 | 报告规模 | 获取状态 | 数据／原始入口 |
 | --- | --- | --- | --- | --- |
+| [BrickFlow / ProcBrick](#brickflow) | Procedural assemblies + image-conditioned reconstruction data | 100M pretraining trees (100 parts each); 1M finetuning renders; 9,900 validation renders | Hugging Face 文件公开（MIT）；额外的 512 模型 BrickNet 评测集需另行申请 BrickNet。 | [Code](https://github.com/kulits/BrickFlow) · [Data](https://huggingface.co/datasets/kulits/BrickFlow) · [Models](https://huggingface.co/kulits/BrickFlow) · [Data generator](https://github.com/kulits/ProcBrick) |
+| [LEGO flat final-goal 200](#lego-flat200) | Simulation video + robot states / actions + goal image / text | 200 episodes (100 teleoperation + 100 correction); 79,956 frames at 20 Hz | Parquet／MP4 文件公开；meta/info.json 已确认规模与仅训练划分。许可仍需澄清。 | [Data](https://huggingface.co/datasets/ajaysri/lego_flat_final_goal_200_v1) · [Data metadata](https://huggingface.co/datasets/ajaysri/lego_flat_final_goal_200_v1/blob/main/meta/info.json) |
+| [YUBI UMI Arena — includes LEGO subset](#yubi-umi-arena) | Real robot RGB + states + actions; LeRobot v3 | Initial release: 336,543 primitive-action episodes / 579.9 h across tasks | 人工审核、仅限竞赛用途；只有训练划分，全量约 2.7 TB；需按任务元数据筛选 LEGO。 | [Data / terms](https://huggingface.co/datasets/airoa-org/yubi-corl2026-umi-arena) |
 | [TPRU-25k / TPRU-test](#tpru) | Frame sequences + temporal QA | 24,750 training examples across domains | Hugging Face；论文注明 LEGO 源材料为 Arvin Bricks 的 36 个定格动画视频。 | [Code](https://github.com/Stephen-gzk/TPRU) · [Data](https://huggingface.co/datasets/Stephengzk/TPRU-25k) · [Test](https://huggingface.co/datasets/Stephengzk/TPRU-test) |
 | [StableText2Brick (formerly StableText2Lego)](#brickgpt) | Brick sequences + text captions | Over 47,000 structures / over 28,000 unique objects | Hugging Face；官方代码仓库提供模型和生成流程入口。 | [Code](https://github.com/AvaLovelace1/BrickGPT) · [Data](https://huggingface.co/datasets/AvaLovelace/StableText2Brick) |
 | [BrickNet](#bricknet) | LDraw-derived graphs + build paths + captions | Paper: over 100,000 human-designed objects / scenes | 数据需要通过表单申请；代码和部分零件资产公开。 | [Code](https://github.com/kulits/BrickNet) · [Data request](https://forms.gle/dm4eYSa5gh4DqzRT6) · [Data documentation](https://github.com/kulits/BrickNet/blob/master/DATA.md) |
 | [MEPNet LEGO manual datasets](#mepnet) | Manual images + 3D parts / poses | Three LEGO manual datasets; see paper | 仓库链接 SharePoint 上的训练、验证与评测数据；本次未下载完整压缩包。 | [Code](https://github.com/Relento/lego_release) · [Data instructions](https://github.com/Relento/lego_release#evaluation) |
 | [LEGO-ECA](#scanet) | Manual images + erroneous assemblies / corrections | 1,429 manuals; approximately 120,000 incorrect examples | 官方补充仓库提供 Google Drive / 百度网盘；本次未下载完整数据。 | [Data instructions](https://github.com/kaichen-z/SCANet-Supp) |
 | [MobileBrick](#mobilebrick) | RGB-D + camera poses + masks + ground-truth mesh | 153 sequences: 135 training + 18 evaluation | 通过官方项目页／仓库下载；这是重建数据，并非装配动作语料。 | [Code / data](https://github.com/ActiveVisionLab/MobileBrick) |
-| [BrickFlow](#brickflow) | Procedural assemblies + image-conditioned reconstruction data | See Hugging Face release | 官方项目链接数据与模型入口。 | [Code](https://github.com/kulits/BrickFlow) · [Data](https://huggingface.co/datasets/kulits/BrickFlow) · [Models](https://huggingface.co/kulits/BrickFlow) |
 | [StableLego](#stablelego) | Voxel grids + assembly JSON + stability scores | See upstream release | 官方仓库提供下载入口，包含稳定与不稳定结构样本。 | [Code / data](https://github.com/intelligent-control-lab/StableLego) |
 | [Combinatorial 3D Shape Dataset](#combinatorial3d) | Primitive structures + generation scripts | See repository dataset directory | 仓库内包含数据目录与生成脚本。 | [Code](https://github.com/POSTECH-CVLab/Combinatorial-3D-Shape-Generation) |
 | [Photos and rendered images of LEGO bricks](#photos-renders) | Real photos + renders + part labels / detection subsets | Approximately 155,000 photos + 1.5 million renders across the collection | 按论文中各子数据集 DOI 获取；Most Wiedzy 可能需要浏览器验证。 | [Full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC10657460/) |
@@ -40,22 +44,37 @@
 
 | 数据／基准 | 模态与任务 | 报告规模 | 获取状态 | 数据／原始入口 |
 | --- | --- | --- | --- | --- |
+| [BrickVision](#brickvision) | Brick images + pointing / counting labels | 1,000 test items: 4 tasks × 250 | Hugging Face 文件与评测器公开；代码含场景生成器。使用同类生成任务训练的结果需单列。 | [Code](https://github.com/elorian-ai/why-grounding) · [Data](https://huggingface.co/datasets/elorian-ai/BrickVision) |
+| [LMBuild Core / Full — LEGO subset](#lmbuild) | Text + images + CAD assemblies / joints / evaluation | Core: 200 total / 55 LEGO; Full: 2,549 total / 938 LEGO | Hugging Face 数据与下载脚本公开；属于混合领域评测，不是独立的全 LEGO 训练语料。 | [Code](https://github.com/Lumos-Jiateng/LMBuild) · [Data](https://huggingface.co/datasets/Lumos-Jiateng/LMBuild) |
+| [PIXIE Assembly](#pixie) | RGB + 6DoF poses + assembly defects | 4 model folders / 695 input-image files counted in repository | 公开、仅测试（不可训练／调参）；统计排除了标定图与网站展示图。 | [Data / protocol](https://github.com/ZEISS/PIXIE-dataset) · [Data files](https://github.com/ZEISS/PIXIE-dataset/tree/main/dataset) |
 | [LEGO-Puzzles](#lego-puzzles) | Images + VQA / planning | Elementary: 1,100 questions / 11 tasks; Planning: see paper version | Hugging Face；下载版本须与所采用论文版本对应。 | [Code](https://github.com/Tangkexian/LEGO-Puzzles) · [Data](https://huggingface.co/datasets/KexianTang/LEGO-Puzzles) |
 | [BC-Bench / Brick-Composer assets](#brick-composer) | Manual renders + brick selection + 6-DoF pose / trajectories | See release splits; designer supervision covers 102 human-designed objects | 官方仓库提供 Hugging Face 入口；需单独确认 benchmark 的划分。 | [Code](https://github.com/Lumos-Jiateng/Brick-Composer) · [Data](https://huggingface.co/datasets/Lumos-Jiateng/brick_synthetic) · [Design data](https://huggingface.co/datasets/Lumos-Jiateng/bricklink_lego_design) |
 | [BrickBench prompts / runs](#brickbench) | Text prompts + generated assemblies / agent runs | 300 prompts across 3 settings | 题目在 BrickAgent 仓库；运行产物在 Hugging Face。 | [Code](https://github.com/kulits/BrickAgent) · [Data](https://huggingface.co/datasets/kulits/BrickBench-Runs) |
 | [WorkBenchMark](#workbenchmark) | YAML task specifications + hidden ground truth | 400 tasks / 4 difficulty tiers | 任务文件已公开；ground_truth 仅供评测，不能作为求解器输入。 | [Data](https://github.com/WorkBenchMark/dataset) |
 | [LTRON / Break and Make](#break-make) | LDraw models + interactive assembly environment | Complex models with over 1,000 distinct brick shapes in the paper | 通过 LTRON 获取资产；固定与论文对应的版本。 | [Code / simulator](https://github.com/aaronwalsman/ltron) · [Training](https://github.com/aaronwalsman/ltron-torch) |
 | [LTRON procedural vehicles](#instructionet) | Procedural models + assembly / disassembly episodes | Average 31 bricks; over 100 disassembly/reassembly actions | 使用 LTRON v1.1.0 与 eccv-24 训练分支。 | [Environment / data](https://github.com/aaronwalsman/ltron/tree/v1.1.0) |
+| [BrickAGI v1.5](#brickagi) | Text design tasks + parts / placements + structural checks | 37 public tasks / 7 difficulty tiers, per upstream index | 社区开卷任务／答案及留出集生成器；需固定协议和验证器版本。 | [Code / data](https://github.com/withtally/brickagi) · [Data task index](https://github.com/withtally/brickagi/blob/main/brickagi/tasks/INDEX.md) |
 
 ### 构建数据集的原始素材
 
 | 数据／基准 | 模态与任务 | 报告规模 | 获取状态 | 数据／原始入口 |
 | --- | --- | --- | --- | --- |
+| [sets_lego_omr_full](#omr-rebrickable) | MPD structure text + set metadata | Approximately 1,367 sets, as reported by the curator | Hugging Face 提供 JSONL 文件；属于社区打包，与上游数据重叠。 | [Data](https://huggingface.co/datasets/DylanRiden/sets_lego_omr_full) |
 | [Conveyor-belt videos](#conveyor) | Real video | Multiple dataset records; see catalog | 机构目录，可能需要浏览器验证。 | [Data](https://mostwiedzy.pl/en/open-research-data-series/video-of-lego-bricks-on-conveyor-belt,202011132226557715481-0/catalog) |
 | [Lego Project Data Archive](#lego-video-archive) | Audio + video + ancillary material | See archive records | 大学记录链接 Zenodo；用于交互研究，不提供逐砖位姿标注的保证。 | [Data record](https://vbn.aau.dk/en/datasets/lego-project-data-archive/) |
 | [LDraw OMR](#ldraw-omr) | LDR / MPD models | Growing community catalog | 按模型记录和文件条款使用；模型不自动等于已验证动作轨迹。 | [Models](https://library.ldraw.org/omr) |
 | [Official building instructions](#lego-instructions) | PDF manuals | Continuously updated | 官方检索入口；公开阅读与再分发／训练授权应分开确认。 | [Instructions](https://www.lego.com/en-us/service/building-instructions) |
 | [Rebrickable catalog](#rebrickable) | Tabular metadata / API | Continuously updated | 目录／API，并非带标注的视觉数据集。 | [Downloads](https://rebrickable.com/downloads/) · [API](https://rebrickable.com/api/) |
+
+### 待确认数据发布：论文已公开
+
+以下规模为论文报告；尚未确认完整数据下载，不能当作已取得的训练集。
+
+| 项目 | 报告规模 | 发布状态 |
+| --- | --- | --- |
+| [JARVIS / JARVIS-v1](#jarvis) | 236,679 training tasks / 8,987 scenes; 50 evaluation tasks | 论文描述了语料规模；公开下载尚未确认。 |
+| [LegoVerse / LegoACE](#legoace) | >55,000 models / 9,314 brick types (paper report) | 代码与权重已有入口；完整语料下载未确认。 |
+| [BrickAnything training data](#brickanything) | No separately verified release size | 有推理代码与权重；独立训练数据发布未确认。 |
 
 ## 快速选读
 
@@ -87,6 +106,18 @@
 <a id="reasoning"></a>
 
 ## 空间与过程推理
+
+<a id="brickvision"></a>
+
+### BrickVision / Where and Why is Grounded Reasoning Useful?
+
+*2026 · arXiv; November 2026*
+
+通过局部图匹配、计数、重复结构识别和无配对结构搜索，评测积木场景中的细粒度视觉定位；包含程序化渲染、风格化图像和几何标签。
+
+[Paper](https://arxiv.org/abs/2611.08485) · [Project](https://elorian.ai/blog/why-grounding) · [Code](https://github.com/elorian-ai/why-grounding) · [Data](https://huggingface.co/datasets/elorian-ai/BrickVision) · [Related training / outputs](https://huggingface.co/datasets/elorian-ai/why-grounding)
+
+> 已逐个统计四份测试 JSONL，各 250 条。配套 SFT/RL 发布也包含非 LEGO 任务，不能全部计为 LEGO 训练数据。数据卡标注 CC BY 4.0。
 
 <a id="lego-puzzles"></a>
 
@@ -147,6 +178,54 @@ BC-Bench 将选砖与位姿预测分开评测，结合人类设计、仿真反�
 <a id="generation"></a>
 
 ## 生成式设计与积木化
+
+<a id="lmbuild"></a>
+
+### LMBuild: Evaluating LLM Agents for Generating Buildable and Functional Structures
+
+*2026 · arXiv; October 2026*
+
+评测智能体生成零件、关节、材料和装配顺序的能力，覆盖结构、功能、设计与实现；包含 LEGO 与其他 CAD 领域。
+
+[Paper](https://arxiv.org/abs/2610.04292) · [Project](https://lumos-jiateng.github.io/LMBuild/) · [Code](https://github.com/Lumos-Jiateng/LMBuild) · [Data](https://huggingface.co/datasets/Lumos-Jiateng/LMBuild)
+
+> 作者来源表给出 Core 中 55 个 LEGO 任务（50 BrickComposer + 5 BrickNet），Full 中 938 个（50 + 888）；与上游语料重叠。数据采用 CC BY-NC-SA 4.0，并保留逐对象来源条款。
+
+<a id="brickagi"></a>
+
+### BrickAGI — community brick-design benchmark
+
+*2026 · Community benchmark; v1.5 June 2026*
+
+提供设计题、参考放置结果与有明确覆盖范围的结构验证器，区分直接生成放置与提示连接规则两种协议。
+
+[Code / data](https://github.com/withtally/brickagi) · [Data task index](https://github.com/withtally/brickagi/blob/main/brickagi/tasks/INDEX.md)
+
+> 社区 benchmark，非同行评审论文。公开任务与答案属于开卷设置；未见任务评测应使用其留出集生成器。验证器不覆盖咬合力、插入顺序和负载稳定性。
+
+<a id="legoace"></a>
+
+### LegoACE: Autoregressive Construction Engine for Expressive LEGO Assemblies
+
+*2025 · SIGGRAPH Asia 2025*
+
+从文本或法线图生成装配结构，并报告覆盖大量零件类型的 LegoVerse 语料。
+
+[Paper](https://doi.org/10.1145/3757377.3763881) · [Project](https://xh38.github.io/LegoACE/) · [Code](https://github.com/VAST-AI-Research/LegoACE) · [Models](https://huggingface.co/VAST-AI/LegoACE)
+
+> 官方仓库给出数据格式、训练步骤和权重入口，但尚未确认完整 LegoVerse 数据集下载。
+
+<a id="brickanything"></a>
+
+### BrickAnything: Geometry-Conditioned Buildable Brick Generation with Structure-Aware Tokenization
+
+*2026 · arXiv; repository labels NeurIPS 2026*
+
+以点云或网格为条件生成积木，结合连接关系树编码、偏好优化和结构回退。
+
+[Paper](https://arxiv.org/abs/2605.26182) · [Code](https://github.com/xjtunzy/BrickAnything) · [Models](https://huggingface.co/niels-peter/BrickAnything)
+
+> 官方 README 提供推理和权重下载；未确认单独发布的作者训练数据归档。稳定性分析依赖 Gurobi。
 
 <a id="dailybrick"></a>
 
@@ -326,6 +405,42 @@ BC-Bench 将选砖与位姿预测分开评测，结合人类设计、仿真反�
 
 ## 机器人、物理与仿真
 
+<a id="yubi-umi-arena"></a>
+
+### YUBI — The UMI Arena @ CoRL 2026
+
+*2026 · CoRL 2026 workshop competition data*
+
+真实双臂操作记录包含 LEGO 拼装／拆解和其他任务；LeRobot v3 数据提供三视角图像、机器人状态、动作与任务层级。
+
+[Data / terms](https://huggingface.co/datasets/airoa-org/yubi-corl2026-umi-arena) · [Project](https://umi-arena.airoa.io/)
+
+> 限通过审核并提交 NDA／保密承诺的竞赛参与者使用，不是通用开放研究语料。规模为所有任务总量，LEGO 子集大小尚未核实；本次未申请访问。
+
+<a id="lego-flat200"></a>
+
+### LEGO flat final-goal demonstrations (community release)
+
+*2026 · Hugging Face; September 2026*
+
+仿真 UR5/WSG50 示范将机器人观测与动作配对到完整搭建目标图或文本，包含遥操作与纠正轨迹。
+
+[Data](https://huggingface.co/datasets/ajaysri/lego_flat_final_goal_200_v1) · [Data metadata](https://huggingface.co/datasets/ajaysri/lego_flat_final_goal_200_v1/blob/main/meta/info.json)
+
+> 社区训练数据，不是标准化 benchmark；没有留出测试集，所核对数据卡未明确复用许可。inspection 浏览表不能重复计入训练量。
+
+<a id="jarvis"></a>
+
+### JARVIS: From Visual Manuals to Autonomous Robotic Assembly
+
+*2026 · arXiv; October 2026*
+
+研究仿真中的视觉说明书引导机器人装配，报告大规模任务语料与 50 任务交互评测集。
+
+[Paper](https://arxiv.org/abs/2610.27618) · [Dataset description](https://arxiv.org/html/2610.27618v1)
+
+> 本次未确认作者发布的数据下载入口。论文提供目标积木位姿与装配状态，不代表每个任务都有底层机器人示范轨迹。
+
 <a id="stablelego"></a>
 
 ### StableLego: Stability Analysis of Block Stacking Assembly
@@ -394,6 +509,18 @@ BC-Bench 将选砖与位姿预测分开评测，结合人类设计、仿真反�
 
 ## 识别与三维重建
 
+<a id="pixie"></a>
+
+### PIXIE Assembly Dataset
+
+*2026 · Dataset release*
+
+使用有装配缺陷、颜色变化与杂乱背景的 LEGO 物体评测零样本 6DoF 位姿估计，提供 RGB、相机标定、目标几何与装配状态标签。
+
+[Data / protocol](https://github.com/ZEISS/PIXIE-dataset) · [Data files](https://github.com/ZEISS/PIXIE-dataset/tree/main/dataset)
+
+> 仅测试：不可用这些图像训练或调参；推理只能使用完整装配的目标模型，不能输入缺陷状态几何或真值。未提供评测脚本。许可为 CC BY 4.0。
+
 <a id="mobilebrick"></a>
 
 ### MobileBrick: Building LEGO for 3D Reconstruction on Mobile Devices
@@ -408,11 +535,13 @@ BC-Bench 将选砖与位姿预测分开评测，结合人类设计、仿真反�
 
 ### BrickFlow: Connectivity-Guided Brick Reconstruction
 
-*2026 · NeurIPS 2026*
+*2026 · NeurIPS 2026 (author release)*
 
 给定图像与零件集合，利用 SE(3) 流模型和连接引导推断零件位姿。
 
-[Paper](https://arxiv.org/abs/2611.17321) · [Project](https://kulits.github.io/BrickFlow/) · [Code](https://github.com/kulits/BrickFlow) · [Data](https://huggingface.co/datasets/kulits/BrickFlow) · [Models](https://huggingface.co/kulits/BrickFlow)
+[Paper](https://arxiv.org/abs/2611.17321) · [Project](https://kulits.github.io/BrickFlow/) · [Code](https://github.com/kulits/BrickFlow) · [Data](https://huggingface.co/datasets/kulits/BrickFlow) · [Models](https://huggingface.co/kulits/BrickFlow) · [Data generator](https://github.com/kulits/ProcBrick)
+
+> ProcBrick 树是合成结构，不是人工设计模型或真实机器人示范。已核对预训练、图像条件微调和验证目录；未完整下载语料。
 
 <a id="photos-renders"></a>
 
@@ -427,6 +556,18 @@ BC-Bench 将选砖与位姿预测分开评测，结合人类设计、仿真反�
 <a id="data"></a>
 
 ## 其他数据来源
+
+<a id="omr-rebrickable"></a>
+
+### LEGO OMR + Rebrickable JSONL (community packaging)
+
+*2026 · Hugging Face; January 2026*
+
+将完整 LDraw MPD 文本与套装元数据打包，便于结构生成实验；是本清单已有 OMR 与 Rebrickable 来源的社区整合版。
+
+[Data](https://huggingface.co/datasets/DylanRiden/sets_lego_omr_full)
+
+> 不能算作 OMR 之外新增的独立模型。数据卡将打包产物标为 Apache-2.0，但仍须核对原模型和元数据条款；未确认已验证装配轨迹或固定测试集。
 
 <a id="b200c"></a>
 

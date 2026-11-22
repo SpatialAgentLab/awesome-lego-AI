@@ -30,13 +30,15 @@ def dataset_overview(lang):
     zh = lang == 'zh'
     groups = [
         ('Training datasets and paired evaluation splits', '训练数据与配套评测集',
-         ('tpru', 'brickgpt', 'bricknet', 'mepnet', 'scanet', 'mobilebrick',
-          'brickflow', 'stablelego', 'combinatorial3d', 'photos-renders', 'b200c')),
+         ('brickflow', 'lego-flat200', 'yubi-umi-arena', 'tpru', 'brickgpt',
+          'bricknet', 'mepnet', 'scanet', 'mobilebrick', 'stablelego',
+          'combinatorial3d', 'photos-renders', 'b200c')),
         ('Benchmarks and interactive task environments', 'Benchmark 与交互任务环境',
-         ('lego-puzzles', 'brick-composer', 'brickbench', 'workbenchmark',
-          'break-make', 'instructionet')),
+         ('brickvision', 'lmbuild', 'pixie', 'lego-puzzles', 'brick-composer',
+          'brickbench', 'workbenchmark', 'break-make', 'instructionet', 'brickagi')),
         ('Source material for building datasets', '构建数据集的原始素材',
-         ('conveyor', 'lego-video-archive', 'ldraw-omr', 'lego-instructions', 'rebrickable')),
+         ('omr-rebrickable', 'conveyor', 'lego-video-archive', 'ldraw-omr',
+          'lego-instructions', 'rebrickable')),
     ]
     by_id = {r['id']: r for r in RESOURCES if 'dataset' in r}
     grouped = [key for _, _, keys in groups for key in keys]
@@ -47,12 +49,14 @@ def dataset_overview(lang):
     if zh:
         lines += [
             f'**数据优先：以下在正文汇总全部 {len(by_id)} 个数据／基准条目，提供任务、规模、获取状态和原始入口。** 数据与配套测试集、独立 benchmark、原始素材分别列出；部分项目同时支持训练与评测。', '',
+            '**本轮更新（2026-11-22）：** 新增 [BrickVision（11 月）](#brickvision)、[LMBuild（10 月）](#lmbuild)、[PIXIE](#pixie)、[仿真装配示范](#lego-flat200)、[YUBI（受限访问）](#yubi-umi-arena)、[OMR 整合包](#omr-rebrickable) 和 [BrickAGI（社区）](#brickagi)；补全 [BrickFlow / ProcBrick](#brickflow) 的 1 亿结构预训练集、100 万微调渲染图与评测划分。表格末尾另列尚未确认下载的数据线索，不计入上述数据条目。', '',
             '**按任务定位：** 空间推理看 [LEGO-Puzzles](#lego-puzzles)；时序理解看 [TPRU 的 LEGO 子集](#tpru)；文本到结构看 [StableText2Brick](#brickgpt) / [BrickNet](#bricknet)；说明书与纠错看 [MEPNet](#mepnet) / [LEGO-ECA](#scanet)；生成评测看 [BrickBench](#brickbench)。', '',
             '规模沿用原始发布记录，不代表本地下载核验后的可用训练量，也不能跨条目直接相加。**TPRU 的 24,750 条是多领域训练总量，并非 LEGO 子集大小。** 更完整的选用、划分与许可注意事项见 [数据子文档](docs/DATASETS.md)。', '',
         ]
     else:
         lines += [
             f'**Data first: all {len(by_id)} data / benchmark entries are listed here with tasks, reported scale, access status and source links.** Datasets with paired evaluation splits, standalone benchmarks and source material are grouped separately; some projects support both training and evaluation.', '',
+            '**Update (2026-11-22):** added [BrickVision (November)](#brickvision), [LMBuild (October)](#lmbuild), [PIXIE](#pixie), [simulated assembly demonstrations](#lego-flat200), [YUBI (restricted)](#yubi-umi-arena), [OMR packaging](#omr-rebrickable) and [BrickAGI (community)](#brickagi). Expanded [BrickFlow / ProcBrick](#brickflow) with its 100M-tree pretraining corpus, 1M finetuning renders and evaluation splits. Unconfirmed dataset releases are listed separately below and excluded from the data-entry count.', '',
             '**Find data by task:** [LEGO-Puzzles](#lego-puzzles) for spatial reasoning; the [LEGO subset of TPRU](#tpru) for temporal understanding; [StableText2Brick](#brickgpt) / [BrickNet](#bricknet) for text-to-structure; [MEPNet](#mepnet) / [LEGO-ECA](#scanet) for manuals and correction; [BrickBench](#brickbench) for generation evaluation.', '',
             'Counts come from the source releases, not verified local downloads, and should not be summed across entries. **TPRU contains 24,750 training examples across domains; this is not the size of its LEGO subset.** See the [dataset companion](docs/DATASETS.md) for selection, split and licensing notes.', '',
         ]
@@ -74,7 +78,22 @@ def dataset_overview(lang):
             source_links = ' · '.join(f'[{k}]({v})' for k, v in sources.items())
             lines.append(f'| [{d["name"]}](#{key}) | {d["modality"]} | {d["scale"]} | {d["access_zh" if zh else "access_en"]} | {source_links} |')
         lines += ['']
+    lines += data_watchlist(lang)
     return lines
+
+
+def data_watchlist(lang, prefix=''):
+    zh = lang == 'zh'
+    lines = ['### ' + ('待确认数据发布：论文已公开' if zh else 'Dataset release watchlist: papers available'), '',
+             ('以下规模为论文报告；尚未确认完整数据下载，不能当作已取得的训练集。' if zh else
+              'Reported corpus sizes are paper claims; full dataset downloads have not been confirmed.'), '',
+             ('| 项目 | 报告规模 | 发布状态 |' if zh else '| Project | Reported scale | Release status |'),
+             '| --- | --- | --- |']
+    for r in RESOURCES:
+        if 'data_watch' in r:
+            d = r['data_watch']
+            lines.append(f'| [{d["name"]}]({prefix}#{r["id"]}) | {d["scale"]} | {d[lang]} |')
+    return lines + ['']
 
 
 def readme(lang):
@@ -163,7 +182,12 @@ def datasets():
             continue
         d = r['dataset']
         lines.append(f'| [{d["name"]}](../README.md#{r["id"]}) | {d["modality"]} | {d["scale"]} | {d["access_en"]}<br>{d["access_zh"]} |')
+    lines += [''] + data_watchlist('en', '../README.md')
     lines += ['', '## Choosing data / 如何选用', '',
+              '- **Fine-grained grounding / counting:** BrickVision (1,000 test items); its scene generator supports separate synthetic training experiments.',
+              '- **Functional assembly:** LMBuild has 55 LEGO tasks in Core and 938 in Full; do not treat its mixed-CAD total as LEGO-only.',
+              '- **Assembly-defect pose evaluation:** PIXIE is test-only. Do not train or tune on its images.',
+              '- **Robot demonstrations:** LEGO flat final-goal 200 is simulated and train-only, with license clarification needed. YUBI contains real LEGO tasks but is restricted to approved competition use.',
               '- **Spatial / temporal QA:** LEGO-Puzzles; the LEGO subset of TPRU. Keep the multi-domain totals separate.',
               '- **Manual-to-action / correction:** MEPNet, LEGO-ECA and BC-Bench assets.',
               '- **Text-to-structure:** StableText2Brick, BrickNet (request access), and BrickBench prompts / runs.',
@@ -178,6 +202,9 @@ def datasets():
               '5. 视频来源应记录作者、原 URL、套装编号、剪辑／加速、许可和标注状态；不要从频道总视频数推算可用训练规模。', '',
               '## Known access limitations / 已知限制', '',
               '- BrickNet: the full dataset uses an author request form. The public CAD assets are a separate download.',
+              '- YUBI: manual approval, competition registration and confidentiality terms; not general-purpose open training data. Its published hours/episodes include non-LEGO tasks.',
+              '- JARVIS, LegoVerse/LegoACE and BrickAnything: tracked as data-release leads, not confirmed downloadable training corpora.',
+              '- Community releases: LEGO flat final-goal 200 has no held-out split or explicit license in the reviewed card; OMR packaging overlaps its upstream models; BrickAGI public tasks/solutions are open-book.',
               '- LEGO Co-builder: an author-linked repository was found, but packaging and reproducibility remain unclear; not counted as a confirmed downloadable dataset here.',
               '- Arvin Bricks: TPRU identifies this source, but this review did not resolve a reliable canonical channel URL or the 36-video manifest. No channel URL is guessed.',
               '- Most Wiedzy / Rebrickable: automated access was restricted. Use the original catalog / paper links and check through a normal browser.',

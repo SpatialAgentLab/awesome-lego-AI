@@ -4,7 +4,7 @@
 
 A curated research list for **LEGO / interlocking bricks × AI**: spatial and temporal reasoning, visual manuals, 3D generation, assembly planning, and robot execution.
 
-Last curated: **2026-11-22**. **54 unique entries**, including **30 papers** and **22 data / benchmark entries**. A project may provide several artifact types; these counts overlap.
+Last curated: **2026-11-22**. **64 unique entries**, including **35 papers** and **29 data / benchmark entries**. A project may provide several artifact types; these counts overlap.
 
 We prioritize original papers, author project pages, official repositories and dataset records. Years generally indicate the first preprint, with publication venues listed separately. Descriptions are original summaries. Link review does not imply successful reproduction or complete dataset download.
 
@@ -14,7 +14,9 @@ We prioritize original papers, author project pages, official repositories and d
 
 ## Training datasets and benchmarks
 
-**Data first: all 22 data / benchmark entries are listed here with tasks, reported scale, access status and source links.** Datasets with paired evaluation splits, standalone benchmarks and source material are grouped separately; some projects support both training and evaluation.
+**Data first: all 29 data / benchmark entries are listed here with tasks, reported scale, access status and source links.** Datasets with paired evaluation splits, standalone benchmarks and source material are grouped separately; some projects support both training and evaluation.
+
+**Update (2026-11-22):** added [BrickVision (November)](#brickvision), [LMBuild (October)](#lmbuild), [PIXIE](#pixie), [simulated assembly demonstrations](#lego-flat200), [YUBI (restricted)](#yubi-umi-arena), [OMR packaging](#omr-rebrickable) and [BrickAGI (community)](#brickagi). Expanded [BrickFlow / ProcBrick](#brickflow) with its 100M-tree pretraining corpus, 1M finetuning renders and evaluation splits. Unconfirmed dataset releases are listed separately below and excluded from the data-entry count.
 
 **Find data by task:** [LEGO-Puzzles](#lego-puzzles) for spatial reasoning; the [LEGO subset of TPRU](#tpru) for temporal understanding; [StableText2Brick](#brickgpt) / [BrickNet](#bricknet) for text-to-structure; [MEPNet](#mepnet) / [LEGO-ECA](#scanet) for manuals and correction; [BrickBench](#brickbench) for generation evaluation.
 
@@ -24,13 +26,15 @@ Counts come from the source releases, not verified local downloads, and should n
 
 | Dataset / benchmark | Modality / task | Reported scale | Access status | Data / source |
 | --- | --- | --- | --- | --- |
+| [BrickFlow / ProcBrick](#brickflow) | Procedural assemblies + image-conditioned reconstruction data | 100M pretraining trees (100 parts each); 1M finetuning renders; 9,900 validation renders | Public Hugging Face files (MIT). Additional 512-model BrickNet evaluation set requires separate BrickNet access. | [Code](https://github.com/kulits/BrickFlow) · [Data](https://huggingface.co/datasets/kulits/BrickFlow) · [Models](https://huggingface.co/kulits/BrickFlow) · [Data generator](https://github.com/kulits/ProcBrick) |
+| [LEGO flat final-goal 200](#lego-flat200) | Simulation video + robot states / actions + goal image / text | 200 episodes (100 teleoperation + 100 correction); 79,956 frames at 20 Hz | Public Parquet / MP4 files; meta/info.json confirms counts and train-only split. License needs clarification. | [Data](https://huggingface.co/datasets/ajaysri/lego_flat_final_goal_200_v1) · [Data metadata](https://huggingface.co/datasets/ajaysri/lego_flat_final_goal_200_v1/blob/main/meta/info.json) |
+| [YUBI UMI Arena — includes LEGO subset](#yubi-umi-arena) | Real robot RGB + states + actions; LeRobot v3 | Initial release: 336,543 primitive-action episodes / 579.9 h across tasks | Manually gated, competition-only terms; train split only, ~2.7 TB overall. LEGO tasks must be filtered from task metadata. | [Data / terms](https://huggingface.co/datasets/airoa-org/yubi-corl2026-umi-arena) |
 | [TPRU-25k / TPRU-test](#tpru) | Frame sequences + temporal QA | 24,750 training examples across domains | Hugging Face; LEGO source: 36 Arvin Bricks stop-motion videos, as reported in the paper. | [Code](https://github.com/Stephen-gzk/TPRU) · [Data](https://huggingface.co/datasets/Stephengzk/TPRU-25k) · [Test](https://huggingface.co/datasets/Stephengzk/TPRU-test) |
 | [StableText2Brick (formerly StableText2Lego)](#brickgpt) | Brick sequences + text captions | Over 47,000 structures / over 28,000 unique objects | Hugging Face; official code links models and generation pipeline. | [Code](https://github.com/AvaLovelace1/BrickGPT) · [Data](https://huggingface.co/datasets/AvaLovelace/StableText2Brick) |
 | [BrickNet](#bricknet) | LDraw-derived graphs + build paths + captions | Paper: over 100,000 human-designed objects / scenes | Dataset access is gated by a request form; code and some part assets are public. | [Code](https://github.com/kulits/BrickNet) · [Data request](https://forms.gle/dm4eYSa5gh4DqzRT6) · [Data documentation](https://github.com/kulits/BrickNet/blob/master/DATA.md) |
 | [MEPNet LEGO manual datasets](#mepnet) | Manual images + 3D parts / poses | Three LEGO manual datasets; see paper | Repository links training, validation and evaluation archives on SharePoint; archives not downloaded here. | [Code](https://github.com/Relento/lego_release) · [Data instructions](https://github.com/Relento/lego_release#evaluation) |
 | [LEGO-ECA](#scanet) | Manual images + erroneous assemblies / corrections | 1,429 manuals; approximately 120,000 incorrect examples | Official supplement repository links Google Drive / Baidu archives; not downloaded here. | [Data instructions](https://github.com/kaichen-z/SCANet-Supp) |
 | [MobileBrick](#mobilebrick) | RGB-D + camera poses + masks + ground-truth mesh | 153 sequences: 135 training + 18 evaluation | Download via official project / repository; reconstruction data, not an assembly-action corpus. | [Code / data](https://github.com/ActiveVisionLab/MobileBrick) |
-| [BrickFlow](#brickflow) | Procedural assemblies + image-conditioned reconstruction data | See Hugging Face release | Data and model entry points are linked by the official project. | [Code](https://github.com/kulits/BrickFlow) · [Data](https://huggingface.co/datasets/kulits/BrickFlow) · [Models](https://huggingface.co/kulits/BrickFlow) |
 | [StableLego](#stablelego) | Voxel grids + assembly JSON + stability scores | See upstream release | Download link in official repository; includes stable and unstable examples. | [Code / data](https://github.com/intelligent-control-lab/StableLego) |
 | [Combinatorial 3D Shape Dataset](#combinatorial3d) | Primitive structures + generation scripts | See repository dataset directory | Dataset and generation scripts are included in the repository. | [Code](https://github.com/POSTECH-CVLab/Combinatorial-3D-Shape-Generation) |
 | [Photos and rendered images of LEGO bricks](#photos-renders) | Real photos + renders + part labels / detection subsets | Approximately 155,000 photos + 1.5 million renders across the collection | Follow the individual dataset DOIs in the paper; Most Wiedzy may require a normal browser challenge. | [Full text](https://pmc.ncbi.nlm.nih.gov/articles/PMC10657460/) |
@@ -40,22 +44,37 @@ Counts come from the source releases, not verified local downloads, and should n
 
 | Dataset / benchmark | Modality / task | Reported scale | Access status | Data / source |
 | --- | --- | --- | --- | --- |
+| [BrickVision](#brickvision) | Brick images + pointing / counting labels | 1,000 test items: 4 tasks × 250 | Public Hugging Face files and evaluator; code includes a scene generator. Report training on generated BrickVision tasks separately. | [Code](https://github.com/elorian-ai/why-grounding) · [Data](https://huggingface.co/datasets/elorian-ai/BrickVision) |
+| [LMBuild Core / Full — LEGO subset](#lmbuild) | Text + images + CAD assemblies / joints / evaluation | Core: 200 total / 55 LEGO; Full: 2,549 total / 938 LEGO | Public Hugging Face data and download script; mixed-domain evaluation, not an independent all-LEGO training corpus. | [Code](https://github.com/Lumos-Jiateng/LMBuild) · [Data](https://huggingface.co/datasets/Lumos-Jiateng/LMBuild) |
+| [PIXIE Assembly](#pixie) | RGB + 6DoF poses + assembly defects | 4 model folders / 695 input-image files counted in repository | Public, test-only (no training/tuning). Count excludes calibration and website images. | [Data / protocol](https://github.com/ZEISS/PIXIE-dataset) · [Data files](https://github.com/ZEISS/PIXIE-dataset/tree/main/dataset) |
 | [LEGO-Puzzles](#lego-puzzles) | Images + VQA / planning | Elementary: 1,100 questions / 11 tasks; Planning: see paper version | Hugging Face; match the downloaded release to the evaluated paper version. | [Code](https://github.com/Tangkexian/LEGO-Puzzles) · [Data](https://huggingface.co/datasets/KexianTang/LEGO-Puzzles) |
 | [BC-Bench / Brick-Composer assets](#brick-composer) | Manual renders + brick selection + 6-DoF pose / trajectories | See release splits; designer supervision covers 102 human-designed objects | Hugging Face links in the official repository; confirm the benchmark split separately. | [Code](https://github.com/Lumos-Jiateng/Brick-Composer) · [Data](https://huggingface.co/datasets/Lumos-Jiateng/brick_synthetic) · [Design data](https://huggingface.co/datasets/Lumos-Jiateng/bricklink_lego_design) |
 | [BrickBench prompts / runs](#brickbench) | Text prompts + generated assemblies / agent runs | 300 prompts across 3 settings | Prompts in BrickAgent; run artifacts on Hugging Face. | [Code](https://github.com/kulits/BrickAgent) · [Data](https://huggingface.co/datasets/kulits/BrickBench-Runs) |
 | [WorkBenchMark](#workbenchmark) | YAML task specifications + hidden ground truth | 400 tasks / 4 difficulty tiers | Task files are public; do not expose ground_truth to the solver. | [Data](https://github.com/WorkBenchMark/dataset) |
 | [LTRON / Break and Make](#break-make) | LDraw models + interactive assembly environment | Complex models with over 1,000 distinct brick shapes in the paper | Install assets through LTRON; pin the release associated with the paper. | [Code / simulator](https://github.com/aaronwalsman/ltron) · [Training](https://github.com/aaronwalsman/ltron-torch) |
 | [LTRON procedural vehicles](#instructionet) | Procedural models + assembly / disassembly episodes | Average 31 bricks; over 100 disassembly/reassembly actions | Use LTRON v1.1.0 and the eccv-24 training branch. | [Environment / data](https://github.com/aaronwalsman/ltron/tree/v1.1.0) |
+| [BrickAGI v1.5](#brickagi) | Text design tasks + parts / placements + structural checks | 37 public tasks / 7 difficulty tiers, per upstream index | Community open-book tasks/solutions plus held-out generator; pin protocol and validator versions. | [Code / data](https://github.com/withtally/brickagi) · [Data task index](https://github.com/withtally/brickagi/blob/main/brickagi/tasks/INDEX.md) |
 
 ### Source material for building datasets
 
 | Dataset / benchmark | Modality / task | Reported scale | Access status | Data / source |
 | --- | --- | --- | --- | --- |
+| [sets_lego_omr_full](#omr-rebrickable) | MPD structure text + set metadata | Approximately 1,367 sets, as reported by the curator | Public JSONL listed on Hugging Face; community packaging with upstream overlap. | [Data](https://huggingface.co/datasets/DylanRiden/sets_lego_omr_full) |
 | [Conveyor-belt videos](#conveyor) | Real video | Multiple dataset records; see catalog | Institutional catalog; browser verification may be required. | [Data](https://mostwiedzy.pl/en/open-research-data-series/video-of-lego-bricks-on-conveyor-belt,202011132226557715481-0/catalog) |
 | [Lego Project Data Archive](#lego-video-archive) | Audio + video + ancillary material | See archive records | University record links Zenodo; designed for interaction research, not brick-pose labels. | [Data record](https://vbn.aau.dk/en/datasets/lego-project-data-archive/) |
 | [LDraw OMR](#ldraw-omr) | LDR / MPD models | Growing community catalog | Browse model records and per-file terms; models are not automatically validated action trajectories. | [Models](https://library.ldraw.org/omr) |
 | [Official building instructions](#lego-instructions) | PDF manuals | Continuously updated | Official lookup portal; public viewing is separate from redistribution or training permission. | [Instructions](https://www.lego.com/en-us/service/building-instructions) |
 | [Rebrickable catalog](#rebrickable) | Tabular metadata / API | Continuously updated | Catalog / API, not an annotated vision dataset. | [Downloads](https://rebrickable.com/downloads/) · [API](https://rebrickable.com/api/) |
+
+### Dataset release watchlist: papers available
+
+Reported corpus sizes are paper claims; full dataset downloads have not been confirmed.
+
+| Project | Reported scale | Release status |
+| --- | --- | --- |
+| [JARVIS / JARVIS-v1](#jarvis) | 236,679 training tasks / 8,987 scenes; 50 evaluation tasks | Paper describes the corpus; public download not confirmed. |
+| [LegoVerse / LegoACE](#legoace) | >55,000 models / 9,314 brick types (paper report) | Code and weights available; full corpus download not confirmed. |
+| [BrickAnything training data](#brickanything) | No separately verified release size | Inference code and weights available; standalone training data not confirmed. |
 
 ## Start here
 
@@ -87,6 +106,18 @@ Counts come from the source releases, not verified local downloads, and should n
 <a id="reasoning"></a>
 
 ## Spatial and procedural reasoning
+
+<a id="brickvision"></a>
+
+### BrickVision / Where and Why is Grounded Reasoning Useful?
+
+*2026 · arXiv; November 2026*
+
+Evaluates fine-grained grounding in brick scenes through crop identification, counting, duplicate detection and unpaired-object search. Includes procedural renders, restyled images and geometric labels.
+
+[Paper](https://arxiv.org/abs/2611.08485) · [Project](https://elorian.ai/blog/why-grounding) · [Code](https://github.com/elorian-ai/why-grounding) · [Data](https://huggingface.co/datasets/elorian-ai/BrickVision) · [Related training / outputs](https://huggingface.co/datasets/elorian-ai/why-grounding)
+
+> The four test JSONL files were counted: 250 items each. Related SFT/RL releases contain non-LEGO tasks too; do not treat their total as LEGO training data. Dataset card: CC BY 4.0.
 
 <a id="lego-puzzles"></a>
 
@@ -147,6 +178,54 @@ Evaluates text-guided coding agents under model, full-set and fixed-inventory bu
 <a id="generation"></a>
 
 ## Generative design and brickification
+
+<a id="lmbuild"></a>
+
+### LMBuild: Evaluating LLM Agents for Generating Buildable and Functional Structures
+
+*2026 · arXiv; October 2026*
+
+Tests agents that assemble parts, joints, materials and sequences, with metrics for structure, function, design and realization. Includes LEGO and other CAD domains.
+
+[Paper](https://arxiv.org/abs/2610.04292) · [Project](https://lumos-jiateng.github.io/LMBuild/) · [Code](https://github.com/Lumos-Jiateng/LMBuild) · [Data](https://huggingface.co/datasets/Lumos-Jiateng/LMBuild)
+
+> Author source table identifies 55 LEGO tasks in Core (50 BrickComposer + 5 BrickNet) and 938 in Full (50 + 888). These overlap upstream corpora. Dataset: CC BY-NC-SA 4.0 plus per-object source terms.
+
+<a id="brickagi"></a>
+
+### BrickAGI — community brick-design benchmark
+
+*2026 · Community benchmark; v1.5 June 2026*
+
+Provides design prompts, reference placements and a scoped structural validator. Separates raw placement generation from prompts that teach a bonding rule.
+
+[Code / data](https://github.com/withtally/brickagi) · [Data task index](https://github.com/withtally/brickagi/blob/main/brickagi/tasks/INDEX.md)
+
+> Community benchmark, not a peer-reviewed paper. Public tasks and solutions are open-book; use its held-out generator for unseen evaluation. Validator scope excludes clutch strength, insertion order and stability under load.
+
+<a id="legoace"></a>
+
+### LegoACE: Autoregressive Construction Engine for Expressive LEGO Assemblies
+
+*2025 · SIGGRAPH Asia 2025*
+
+Generates assemblies from text or normal maps and reports LegoVerse, a corpus spanning many distinct brick types.
+
+[Paper](https://doi.org/10.1145/3757377.3763881) · [Project](https://xh38.github.io/LegoACE/) · [Code](https://github.com/VAST-AI-Research/LegoACE) · [Models](https://huggingface.co/VAST-AI/LegoACE)
+
+> The official repository documents data formats and training, and links model weights. A full LegoVerse dataset download was not confirmed.
+
+<a id="brickanything"></a>
+
+### BrickAnything: Geometry-Conditioned Buildable Brick Generation with Structure-Aware Tokenization
+
+*2026 · arXiv; repository labels NeurIPS 2026*
+
+Conditions brick generation on point clouds or meshes, using attachment-aware tree tokens, preference optimization and structural rollback.
+
+[Paper](https://arxiv.org/abs/2605.26182) · [Code](https://github.com/xjtunzy/BrickAnything) · [Models](https://huggingface.co/niels-peter/BrickAnything)
+
+> Official README provides inference and model downloads; no separate author-hosted training dataset archive was confirmed. Stability analysis requires Gurobi.
 
 <a id="dailybrick"></a>
 
@@ -326,6 +405,42 @@ Reinforcement learning with online physical action masks for executable construc
 
 ## Robotics, physics and simulation
 
+<a id="yubi-umi-arena"></a>
+
+### YUBI — The UMI Arena @ CoRL 2026
+
+*2026 · CoRL 2026 workshop competition data*
+
+Real bimanual manipulation recordings include LEGO assembly/disassembly alongside other tasks. LeRobot v3 data combines three camera views, robot states, actions and task hierarchy.
+
+[Data / terms](https://huggingface.co/datasets/airoa-org/yubi-corl2026-umi-arena) · [Project](https://umi-arena.airoa.io/)
+
+> Restricted to approved competition participants with an NDA/confidentiality pledge; not a generally open research corpus. Counts are for all tasks; the LEGO-only size was not established. No access request submitted.
+
+<a id="lego-flat200"></a>
+
+### LEGO flat final-goal demonstrations (community release)
+
+*2026 · Hugging Face; September 2026*
+
+Simulated UR5/WSG50 demonstrations pair robot observations and actions with a complete-build image or text goal. Includes teleoperation and corrective episodes.
+
+[Data](https://huggingface.co/datasets/ajaysri/lego_flat_final_goal_200_v1) · [Data metadata](https://huggingface.co/datasets/ajaysri/lego_flat_final_goal_200_v1/blob/main/meta/info.json)
+
+> Community training release, not a standardized benchmark. No held-out split; no explicit reuse license found in the reviewed card. The inspection table is not extra training data.
+
+<a id="jarvis"></a>
+
+### JARVIS: From Visual Manuals to Autonomous Robotic Assembly
+
+*2026 · arXiv; October 2026*
+
+Studies visual-manual-guided robotic assembly in simulation, with a large task corpus and a 50-task interactive evaluation suite.
+
+[Paper](https://arxiv.org/abs/2610.27618) · [Dataset description](https://arxiv.org/html/2610.27618v1)
+
+> No author-controlled download was confirmed in this review. The paper supplies target brick poses and assembly states, not a demonstrated low-level robot trajectory for every task.
+
 <a id="stablelego"></a>
 
 ### StableLego: Stability Analysis of Block Stacking Assembly
@@ -394,6 +509,18 @@ Learns assembly and disassembly from demonstrations and validates execution usin
 
 ## Recognition and 3D reconstruction
 
+<a id="pixie"></a>
+
+### PIXIE Assembly Dataset
+
+*2026 · Dataset release*
+
+Tests zero-shot 6DoF pose estimation on LEGO objects with assembly defects, color variation and clutter. Provides RGB inputs, camera calibration, target geometry and assembly-state labels.
+
+[Data / protocol](https://github.com/ZEISS/PIXIE-dataset) · [Data files](https://github.com/ZEISS/PIXIE-dataset/tree/main/dataset)
+
+> Test only: do not train or tune on these images. At inference, use only the fully assembled target model, not defective-state geometry or ground truth. Evaluation scripts are not supplied. CC BY 4.0.
+
 <a id="mobilebrick"></a>
 
 ### MobileBrick: Building LEGO for 3D Reconstruction on Mobile Devices
@@ -408,11 +535,13 @@ Mobile RGB-D observations paired with precise geometry for fine-scale reconstruc
 
 ### BrickFlow: Connectivity-Guided Brick Reconstruction
 
-*2026 · NeurIPS 2026*
+*2026 · NeurIPS 2026 (author release)*
 
 Infers part poses from an image and a given part inventory using SE(3) flow and connectivity guidance.
 
-[Paper](https://arxiv.org/abs/2611.17321) · [Project](https://kulits.github.io/BrickFlow/) · [Code](https://github.com/kulits/BrickFlow) · [Data](https://huggingface.co/datasets/kulits/BrickFlow) · [Models](https://huggingface.co/kulits/BrickFlow)
+[Paper](https://arxiv.org/abs/2611.17321) · [Project](https://kulits.github.io/BrickFlow/) · [Code](https://github.com/kulits/BrickFlow) · [Data](https://huggingface.co/datasets/kulits/BrickFlow) · [Models](https://huggingface.co/kulits/BrickFlow) · [Data generator](https://github.com/kulits/ProcBrick)
+
+> ProcBrick trees are synthetic structures, not human-designed models or real robot demonstrations. Separate pretraining, image-conditioned and validation folders are documented; the full corpus was not downloaded.
 
 <a id="photos-renders"></a>
 
@@ -427,6 +556,18 @@ A data descriptor for real and synthetic part images, with part identity and cat
 <a id="data"></a>
 
 ## Additional data sources
+
+<a id="omr-rebrickable"></a>
+
+### LEGO OMR + Rebrickable JSONL (community packaging)
+
+*2026 · Hugging Face; January 2026*
+
+Packages complete LDraw MPD text with set metadata for structure-generation experiments. A convenient derivative of the OMR and Rebrickable sources already listed here.
+
+[Data](https://huggingface.co/datasets/DylanRiden/sets_lego_omr_full)
+
+> Not additional independent models beyond OMR. The card labels the package Apache-2.0, but original model and metadata terms still require review; no validated assembly trajectories or fixed test split were established.
 
 <a id="b200c"></a>
 

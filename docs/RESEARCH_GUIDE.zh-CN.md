@@ -45,6 +45,14 @@
 
 ## 数据获取顺序建议
 
+本轮补查后，可按研究目标加入以下资源（具体规模和获取状态见 [正文数据节](../README.zh-CN.md#datasets-benchmarks)）：
+
+- **MLLM 视觉评测：** 加入 [BrickVision](https://huggingface.co/datasets/elorian-ai/BrickVision) 的定位、计数与结构比较任务，补充 LEGO-Puzzles；同类生成题训练与零样本结果分别报告。
+- **大规模结构训练：** 查看 [BrickFlow / ProcBrick](https://huggingface.co/datasets/kulits/BrickFlow) 的结构预训练与图像条件微调划分。先验证小规模读取和表示转换，再确定完整下载需求。
+- **结构功能评测：** 使用 [LMBuild](https://huggingface.co/datasets/Lumos-Jiateng/LMBuild) 的 LEGO 子集，按来源检查与 BrickNet / BrickComposer 训练数据的重叠。
+- **装配缺陷感知：** [PIXIE](https://github.com/ZEISS/PIXIE-dataset) 适合作为零样本位姿评测集，不用于训练或调参。
+- **机器人动作训练：** [LEGO flat final-goal 200](https://huggingface.co/datasets/ajaysri/lego_flat_final_goal_200_v1) 是小规模仿真示范线索，复用前需澄清许可；[YUBI](https://huggingface.co/datasets/airoa-org/yubi-corl2026-umi-arena) 受竞赛访问与用途限制，不作为默认开放语料。
+
 | 阶段 | 先获取什么 | 应产出的最小结果 |
 | --- | --- | --- |
 | 起步 | LEGO-Puzzles、TPRU 的小样本及任务定义 | 可复跑的评测清单和数据划分记录 |

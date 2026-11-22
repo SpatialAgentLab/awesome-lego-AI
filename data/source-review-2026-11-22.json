@@ -1,0 +1,97 @@
+{
+  "reviewed": "2026-11-22",
+  "scope": "Incremental search for LEGO training datasets and benchmarks; primary-source cards, repository manifests and small metadata files. No full datasets or weights downloaded.",
+  "hub_metadata": [
+    {
+      "url": "https://huggingface.co/datasets/elorian-ai/BrickVision",
+      "revision": "ccedb16baadb1c7f2a85c0af04c168d953fa8b75",
+      "created_at": "2026-11-06T17:40:25.000Z",
+      "last_modified": "2026-11-07T05:23:19.000Z",
+      "gated": false,
+      "file_count": 2772
+    },
+    {
+      "url": "https://huggingface.co/datasets/ajaysri/lego_flat_final_goal_200_v1",
+      "revision": "c592138d8d8a8ce5231a12763eea209559db2271",
+      "created_at": "2026-09-15T09:52:34.000Z",
+      "last_modified": "2026-09-15T11:14:59.000Z",
+      "gated": false,
+      "file_count": 12
+    },
+    {
+      "url": "https://huggingface.co/datasets/DylanRiden/sets_lego_omr_full",
+      "revision": "1a6ad2a6011d59188ad0c733876999c9812d5594",
+      "created_at": "2026-01-12T18:09:47.000Z",
+      "last_modified": "2026-01-12T18:22:01.000Z",
+      "gated": false,
+      "file_count": 3
+    },
+    {
+      "url": "https://huggingface.co/datasets/airoa-org/yubi-corl2026-umi-arena",
+      "revision": "8d427f9a70adbc40f5c0933962516a1b44dd5cc5",
+      "created_at": "2026-08-04T14:08:14.000Z",
+      "last_modified": "2026-11-05T13:54:29.000Z",
+      "gated": "manual",
+      "file_count": 6134
+    },
+    {
+      "url": "https://huggingface.co/datasets/kulits/BrickFlow",
+      "revision": "a2ff8611b2c893dc34c549e1508c3163131e8473",
+      "created_at": "2026-11-13T00:37:51.000Z",
+      "last_modified": "2026-11-16T07:07:24.000Z",
+      "gated": false,
+      "file_count": 15873
+    }
+  ],
+  "small_file_checks": [
+    {
+      "url": "https://huggingface.co/datasets/elorian-ai/BrickVision/resolve/main/restyled/crop_id/items.jsonl",
+      "records": 250,
+      "sha256": "e1b9ca5b5b1da25e4db8658cc2e5bd5007c2ead394c45fe453b6458cb4e35106"
+    },
+    {
+      "url": "https://huggingface.co/datasets/elorian-ai/BrickVision/resolve/main/restyled/counting/items.jsonl",
+      "records": 250,
+      "sha256": "caa765541e014b0aeab8e6507ccc0eab929d0fa94718242ecb1d54994452169d"
+    },
+    {
+      "url": "https://huggingface.co/datasets/elorian-ai/BrickVision/resolve/main/restyled/duplicate/items.jsonl",
+      "records": 250,
+      "sha256": "dcc78487f1df3faee5b58181a4e521026d8843040ca6dd4e00656c907b197a92"
+    },
+    {
+      "url": "https://huggingface.co/datasets/elorian-ai/BrickVision/resolve/main/restyled/unpaired/items.jsonl",
+      "records": 250,
+      "sha256": "07538b38d164ae491b2617a9fc4caf36067b774a94f42f0e38d142506d433dc0"
+    },
+    {
+      "url": "https://huggingface.co/datasets/ajaysri/lego_flat_final_goal_200_v1/resolve/main/meta/info.json",
+      "total_episodes": 200,
+      "total_frames": 79956,
+      "fps": 20,
+      "splits": {
+        "train": "0:200"
+      },
+      "sha256": "52b11a7163f05f666ff598c33fdd3afedbca7e545d3e9394ee243d0a4b8ffda1"
+    },
+    {
+      "url": "https://api.github.com/repos/ZEISS/PIXIE-dataset/git/trees/main?recursive=1",
+      "revision": "86a3ca0ada507a52fa5879296fd5e4aa4d3fe9cf",
+      "model_directories": 4,
+      "input_image_files": 695,
+      "count_rule": "Image blobs under dataset/*/data/; excludes calibration and docs images; no image payload downloaded."
+    }
+  ],
+  "limitations": [
+    "LMBuild 55/938 LEGO subset counts are from the author project source table; attempted core manifest download timed out and was not counted locally.",
+    "YUBI metadata is visible but data requires manual approval; no terms accepted or access requested.",
+    "OMR packaging size and BrickAGI task count remain source-reported.",
+    "JARVIS, LegoVerse/LegoACE and BrickAnything full training downloads not confirmed."
+  ],
+  "excluded_name_collisions": [
+    "bolinlai/LEGO-Dataset: egocentric action generation acronym, not a LEGO-brick corpus.",
+    "JazySong/LegoEnv: software tool-use environments, not physical bricks.",
+    "ZZH-qwq/Bricker: RAW flicker-banding restoration, not brick assembly.",
+    "SWE-Lego / Terminal-Lego: software-engineering tasks."
+  ]
+}

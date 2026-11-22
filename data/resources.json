@@ -3,6 +3,280 @@
   "scope": "LEGO / interlocking bricks for AI research",
   "resources": [
     {
+      "id": "brickvision",
+      "category": "reasoning",
+      "title": "BrickVision / Where and Why is Grounded Reasoning Useful?",
+      "year": 2026,
+      "venue": "arXiv; November 2026",
+      "description": {
+        "en": "Evaluates fine-grained grounding in brick scenes through crop identification, counting, duplicate detection and unpaired-object search. Includes procedural renders, restyled images and geometric labels.",
+        "zh": "通过局部图匹配、计数、重复结构识别和无配对结构搜索，评测积木场景中的细粒度视觉定位；包含程序化渲染、风格化图像和几何标签。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2611.08485",
+        "Project": "https://elorian.ai/blog/why-grounding",
+        "Code": "https://github.com/elorian-ai/why-grounding",
+        "Data": "https://huggingface.co/datasets/elorian-ai/BrickVision",
+        "Related training / outputs": "https://huggingface.co/datasets/elorian-ai/why-grounding"
+      },
+      "notes": {
+        "en": "The four test JSONL files were counted: 250 items each. Related SFT/RL releases contain non-LEGO tasks too; do not treat their total as LEGO training data. Dataset card: CC BY 4.0.",
+        "zh": "已逐个统计四份测试 JSONL，各 250 条。配套 SFT/RL 发布也包含非 LEGO 任务，不能全部计为 LEGO 训练数据。数据卡标注 CC BY 4.0。"
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "BrickVision",
+        "modality": "Brick images + pointing / counting labels",
+        "scale": "1,000 test items: 4 tasks × 250",
+        "access_en": "Public Hugging Face files and evaluator; code includes a scene generator. Report training on generated BrickVision tasks separately.",
+        "access_zh": "Hugging Face 文件与评测器公开；代码含场景生成器。使用同类生成任务训练的结果需单列。"
+      }
+    },
+    {
+      "id": "lmbuild",
+      "category": "generation",
+      "title": "LMBuild: Evaluating LLM Agents for Generating Buildable and Functional Structures",
+      "year": 2026,
+      "venue": "arXiv; October 2026",
+      "description": {
+        "en": "Tests agents that assemble parts, joints, materials and sequences, with metrics for structure, function, design and realization. Includes LEGO and other CAD domains.",
+        "zh": "评测智能体生成零件、关节、材料和装配顺序的能力，覆盖结构、功能、设计与实现；包含 LEGO 与其他 CAD 领域。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2610.04292",
+        "Project": "https://lumos-jiateng.github.io/LMBuild/",
+        "Code": "https://github.com/Lumos-Jiateng/LMBuild",
+        "Data": "https://huggingface.co/datasets/Lumos-Jiateng/LMBuild"
+      },
+      "notes": {
+        "en": "Author source table identifies 55 LEGO tasks in Core (50 BrickComposer + 5 BrickNet) and 938 in Full (50 + 888). These overlap upstream corpora. Dataset: CC BY-NC-SA 4.0 plus per-object source terms.",
+        "zh": "作者来源表给出 Core 中 55 个 LEGO 任务（50 BrickComposer + 5 BrickNet），Full 中 938 个（50 + 888）；与上游语料重叠。数据采用 CC BY-NC-SA 4.0，并保留逐对象来源条款。"
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "LMBuild Core / Full — LEGO subset",
+        "modality": "Text + images + CAD assemblies / joints / evaluation",
+        "scale": "Core: 200 total / 55 LEGO; Full: 2,549 total / 938 LEGO",
+        "access_en": "Public Hugging Face data and download script; mixed-domain evaluation, not an independent all-LEGO training corpus.",
+        "access_zh": "Hugging Face 数据与下载脚本公开；属于混合领域评测，不是独立的全 LEGO 训练语料。"
+      }
+    },
+    {
+      "id": "pixie",
+      "category": "perception",
+      "title": "PIXIE Assembly Dataset",
+      "year": 2026,
+      "venue": "Dataset release",
+      "description": {
+        "en": "Tests zero-shot 6DoF pose estimation on LEGO objects with assembly defects, color variation and clutter. Provides RGB inputs, camera calibration, target geometry and assembly-state labels.",
+        "zh": "使用有装配缺陷、颜色变化与杂乱背景的 LEGO 物体评测零样本 6DoF 位姿估计，提供 RGB、相机标定、目标几何与装配状态标签。"
+      },
+      "links": {
+        "Data / protocol": "https://github.com/ZEISS/PIXIE-dataset",
+        "Data files": "https://github.com/ZEISS/PIXIE-dataset/tree/main/dataset"
+      },
+      "notes": {
+        "en": "Test only: do not train or tune on these images. At inference, use only the fully assembled target model, not defective-state geometry or ground truth. Evaluation scripts are not supplied. CC BY 4.0.",
+        "zh": "仅测试：不可用这些图像训练或调参；推理只能使用完整装配的目标模型，不能输入缺陷状态几何或真值。未提供评测脚本。许可为 CC BY 4.0。"
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "PIXIE Assembly",
+        "modality": "RGB + 6DoF poses + assembly defects",
+        "scale": "4 model folders / 695 input-image files counted in repository",
+        "access_en": "Public, test-only (no training/tuning). Count excludes calibration and website images.",
+        "access_zh": "公开、仅测试（不可训练／调参）；统计排除了标定图与网站展示图。"
+      }
+    },
+    {
+      "id": "yubi-umi-arena",
+      "category": "robotics",
+      "title": "YUBI — The UMI Arena @ CoRL 2026",
+      "year": 2026,
+      "venue": "CoRL 2026 workshop competition data",
+      "description": {
+        "en": "Real bimanual manipulation recordings include LEGO assembly/disassembly alongside other tasks. LeRobot v3 data combines three camera views, robot states, actions and task hierarchy.",
+        "zh": "真实双臂操作记录包含 LEGO 拼装／拆解和其他任务；LeRobot v3 数据提供三视角图像、机器人状态、动作与任务层级。"
+      },
+      "links": {
+        "Data / terms": "https://huggingface.co/datasets/airoa-org/yubi-corl2026-umi-arena",
+        "Project": "https://umi-arena.airoa.io/"
+      },
+      "notes": {
+        "en": "Restricted to approved competition participants with an NDA/confidentiality pledge; not a generally open research corpus. Counts are for all tasks; the LEGO-only size was not established. No access request submitted.",
+        "zh": "限通过审核并提交 NDA／保密承诺的竞赛参与者使用，不是通用开放研究语料。规模为所有任务总量，LEGO 子集大小尚未核实；本次未申请访问。"
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "YUBI UMI Arena — includes LEGO subset",
+        "modality": "Real robot RGB + states + actions; LeRobot v3",
+        "scale": "Initial release: 336,543 primitive-action episodes / 579.9 h across tasks",
+        "access_en": "Manually gated, competition-only terms; train split only, ~2.7 TB overall. LEGO tasks must be filtered from task metadata.",
+        "access_zh": "人工审核、仅限竞赛用途；只有训练划分，全量约 2.7 TB；需按任务元数据筛选 LEGO。"
+      }
+    },
+    {
+      "id": "lego-flat200",
+      "category": "robotics",
+      "title": "LEGO flat final-goal demonstrations (community release)",
+      "year": 2026,
+      "venue": "Hugging Face; September 2026",
+      "description": {
+        "en": "Simulated UR5/WSG50 demonstrations pair robot observations and actions with a complete-build image or text goal. Includes teleoperation and corrective episodes.",
+        "zh": "仿真 UR5/WSG50 示范将机器人观测与动作配对到完整搭建目标图或文本，包含遥操作与纠正轨迹。"
+      },
+      "links": {
+        "Data": "https://huggingface.co/datasets/ajaysri/lego_flat_final_goal_200_v1",
+        "Data metadata": "https://huggingface.co/datasets/ajaysri/lego_flat_final_goal_200_v1/blob/main/meta/info.json"
+      },
+      "notes": {
+        "en": "Community training release, not a standardized benchmark. No held-out split; no explicit reuse license found in the reviewed card. The inspection table is not extra training data.",
+        "zh": "社区训练数据，不是标准化 benchmark；没有留出测试集，所核对数据卡未明确复用许可。inspection 浏览表不能重复计入训练量。"
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "LEGO flat final-goal 200",
+        "modality": "Simulation video + robot states / actions + goal image / text",
+        "scale": "200 episodes (100 teleoperation + 100 correction); 79,956 frames at 20 Hz",
+        "access_en": "Public Parquet / MP4 files; meta/info.json confirms counts and train-only split. License needs clarification.",
+        "access_zh": "Parquet／MP4 文件公开；meta/info.json 已确认规模与仅训练划分。许可仍需澄清。"
+      }
+    },
+    {
+      "id": "omr-rebrickable",
+      "category": "data",
+      "title": "LEGO OMR + Rebrickable JSONL (community packaging)",
+      "year": 2026,
+      "venue": "Hugging Face; January 2026",
+      "description": {
+        "en": "Packages complete LDraw MPD text with set metadata for structure-generation experiments. A convenient derivative of the OMR and Rebrickable sources already listed here.",
+        "zh": "将完整 LDraw MPD 文本与套装元数据打包，便于结构生成实验；是本清单已有 OMR 与 Rebrickable 来源的社区整合版。"
+      },
+      "links": {
+        "Data": "https://huggingface.co/datasets/DylanRiden/sets_lego_omr_full"
+      },
+      "notes": {
+        "en": "Not additional independent models beyond OMR. The card labels the package Apache-2.0, but original model and metadata terms still require review; no validated assembly trajectories or fixed test split were established.",
+        "zh": "不能算作 OMR 之外新增的独立模型。数据卡将打包产物标为 Apache-2.0，但仍须核对原模型和元数据条款；未确认已验证装配轨迹或固定测试集。"
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "sets_lego_omr_full",
+        "modality": "MPD structure text + set metadata",
+        "scale": "Approximately 1,367 sets, as reported by the curator",
+        "access_en": "Public JSONL listed on Hugging Face; community packaging with upstream overlap.",
+        "access_zh": "Hugging Face 提供 JSONL 文件；属于社区打包，与上游数据重叠。"
+      }
+    },
+    {
+      "id": "brickagi",
+      "category": "generation",
+      "title": "BrickAGI — community brick-design benchmark",
+      "year": 2026,
+      "venue": "Community benchmark; v1.5 June 2026",
+      "description": {
+        "en": "Provides design prompts, reference placements and a scoped structural validator. Separates raw placement generation from prompts that teach a bonding rule.",
+        "zh": "提供设计题、参考放置结果与有明确覆盖范围的结构验证器，区分直接生成放置与提示连接规则两种协议。"
+      },
+      "links": {
+        "Code / data": "https://github.com/withtally/brickagi",
+        "Data task index": "https://github.com/withtally/brickagi/blob/main/brickagi/tasks/INDEX.md"
+      },
+      "notes": {
+        "en": "Community benchmark, not a peer-reviewed paper. Public tasks and solutions are open-book; use its held-out generator for unseen evaluation. Validator scope excludes clutch strength, insertion order and stability under load.",
+        "zh": "社区 benchmark，非同行评审论文。公开任务与答案属于开卷设置；未见任务评测应使用其留出集生成器。验证器不覆盖咬合力、插入顺序和负载稳定性。"
+      },
+      "checked": "2026-11-22",
+      "dataset": {
+        "name": "BrickAGI v1.5",
+        "modality": "Text design tasks + parts / placements + structural checks",
+        "scale": "37 public tasks / 7 difficulty tiers, per upstream index",
+        "access_en": "Community open-book tasks/solutions plus held-out generator; pin protocol and validator versions.",
+        "access_zh": "社区开卷任务／答案及留出集生成器；需固定协议和验证器版本。"
+      }
+    },
+    {
+      "id": "jarvis",
+      "category": "robotics",
+      "title": "JARVIS: From Visual Manuals to Autonomous Robotic Assembly",
+      "year": 2026,
+      "venue": "arXiv; October 2026",
+      "description": {
+        "en": "Studies visual-manual-guided robotic assembly in simulation, with a large task corpus and a 50-task interactive evaluation suite.",
+        "zh": "研究仿真中的视觉说明书引导机器人装配，报告大规模任务语料与 50 任务交互评测集。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2610.27618",
+        "Dataset description": "https://arxiv.org/html/2610.27618v1"
+      },
+      "notes": {
+        "en": "No author-controlled download was confirmed in this review. The paper supplies target brick poses and assembly states, not a demonstrated low-level robot trajectory for every task.",
+        "zh": "本次未确认作者发布的数据下载入口。论文提供目标积木位姿与装配状态，不代表每个任务都有底层机器人示范轨迹。"
+      },
+      "checked": "2026-11-22",
+      "data_watch": {
+        "name": "JARVIS / JARVIS-v1",
+        "scale": "236,679 training tasks / 8,987 scenes; 50 evaluation tasks",
+        "en": "Paper describes the corpus; public download not confirmed.",
+        "zh": "论文描述了语料规模；公开下载尚未确认。"
+      }
+    },
+    {
+      "id": "legoace",
+      "category": "generation",
+      "title": "LegoACE: Autoregressive Construction Engine for Expressive LEGO Assemblies",
+      "year": 2025,
+      "venue": "SIGGRAPH Asia 2025",
+      "description": {
+        "en": "Generates assemblies from text or normal maps and reports LegoVerse, a corpus spanning many distinct brick types.",
+        "zh": "从文本或法线图生成装配结构，并报告覆盖大量零件类型的 LegoVerse 语料。"
+      },
+      "links": {
+        "Paper": "https://doi.org/10.1145/3757377.3763881",
+        "Project": "https://xh38.github.io/LegoACE/",
+        "Code": "https://github.com/VAST-AI-Research/LegoACE",
+        "Models": "https://huggingface.co/VAST-AI/LegoACE"
+      },
+      "notes": {
+        "en": "The official repository documents data formats and training, and links model weights. A full LegoVerse dataset download was not confirmed.",
+        "zh": "官方仓库给出数据格式、训练步骤和权重入口，但尚未确认完整 LegoVerse 数据集下载。"
+      },
+      "checked": "2026-11-22",
+      "data_watch": {
+        "name": "LegoVerse / LegoACE",
+        "scale": ">55,000 models / 9,314 brick types (paper report)",
+        "en": "Code and weights available; full corpus download not confirmed.",
+        "zh": "代码与权重已有入口；完整语料下载未确认。"
+      }
+    },
+    {
+      "id": "brickanything",
+      "category": "generation",
+      "title": "BrickAnything: Geometry-Conditioned Buildable Brick Generation with Structure-Aware Tokenization",
+      "year": 2026,
+      "venue": "arXiv; repository labels NeurIPS 2026",
+      "description": {
+        "en": "Conditions brick generation on point clouds or meshes, using attachment-aware tree tokens, preference optimization and structural rollback.",
+        "zh": "以点云或网格为条件生成积木，结合连接关系树编码、偏好优化和结构回退。"
+      },
+      "links": {
+        "Paper": "https://arxiv.org/abs/2605.26182",
+        "Code": "https://github.com/xjtunzy/BrickAnything",
+        "Models": "https://huggingface.co/niels-peter/BrickAnything"
+      },
+      "notes": {
+        "en": "Official README provides inference and model downloads; no separate author-hosted training dataset archive was confirmed. Stability analysis requires Gurobi.",
+        "zh": "官方 README 提供推理和权重下载；未确认单独发布的作者训练数据归档。稳定性分析依赖 Gurobi。"
+      },
+      "checked": "2026-11-22",
+      "data_watch": {
+        "name": "BrickAnything training data",
+        "scale": "No separately verified release size",
+        "en": "Inference code and weights available; standalone training data not confirmed.",
+        "zh": "有推理代码与权重；独立训练数据发布未确认。"
+      }
+    },
+    {
       "id": "lego-puzzles",
       "category": "reasoning",
       "title": "LEGO-Puzzles: How Good Are MLLMs at Multi-Step Spatial Reasoning?",
@@ -693,7 +967,7 @@
       "category": "perception",
       "title": "BrickFlow: Connectivity-Guided Brick Reconstruction",
       "year": 2026,
-      "venue": "NeurIPS 2026",
+      "venue": "NeurIPS 2026 (author release)",
       "description": {
         "en": "Infers part poses from an image and a given part inventory using SE(3) flow and connectivity guidance.",
         "zh": "给定图像与零件集合，利用 SE(3) 流模型和连接引导推断零件位姿。"
@@ -703,19 +977,20 @@
         "Project": "https://kulits.github.io/BrickFlow/",
         "Code": "https://github.com/kulits/BrickFlow",
         "Data": "https://huggingface.co/datasets/kulits/BrickFlow",
-        "Models": "https://huggingface.co/kulits/BrickFlow"
+        "Models": "https://huggingface.co/kulits/BrickFlow",
+        "Data generator": "https://github.com/kulits/ProcBrick"
       },
       "notes": {
-        "en": "",
-        "zh": ""
+        "en": "ProcBrick trees are synthetic structures, not human-designed models or real robot demonstrations. Separate pretraining, image-conditioned and validation folders are documented; the full corpus was not downloaded.",
+        "zh": "ProcBrick 树是合成结构，不是人工设计模型或真实机器人示范。已核对预训练、图像条件微调和验证目录；未完整下载语料。"
       },
       "checked": "2026-11-22",
       "dataset": {
-        "name": "BrickFlow",
+        "name": "BrickFlow / ProcBrick",
         "modality": "Procedural assemblies + image-conditioned reconstruction data",
-        "scale": "See Hugging Face release",
-        "access_en": "Data and model entry points are linked by the official project.",
-        "access_zh": "官方项目链接数据与模型入口。"
+        "scale": "100M pretraining trees (100 parts each); 1M finetuning renders; 9,900 validation renders",
+        "access_en": "Public Hugging Face files (MIT). Additional 512-model BrickNet evaluation set requires separate BrickNet access.",
+        "access_zh": "Hugging Face 文件公开（MIT）；额外的 512 模型 BrickNet 评测集需另行申请 BrickNet。"
       }
     },
     {
