@@ -4,7 +4,7 @@
 
 A curated research list for **LEGO / interlocking bricks × AI**: spatial and temporal reasoning, visual manuals, 3D generation, assembly planning, and robot execution.
 
-**Focused shortlist (Chinese):** [10 resources for functional LEGO design agents](docs/FOCUSED_LEGO_DESIGN.zh-CN.md) — requirements, software-based modeling, assembly and functional verification, with data and benchmark links.
+**Focused research guide:** [Functional LEGO design agents](docs/FOCUSED_LEGO_DESIGN.md) · [简体中文](docs/FOCUSED_LEGO_DESIGN.zh-CN.md) — 20 selected resources, data and benchmarks, plain-language explanations and an experiment roadmap.
 
 Main catalog last curated: **2026-11-22**. **64 unique entries**, including **35 papers** and **29 data / benchmark entries**. A project may provide several artifact types; these counts overlap. Additional shortlist resources are listed separately.
 

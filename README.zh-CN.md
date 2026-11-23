@@ -4,7 +4,7 @@
 
 面向 **LEGO / 咬合积木 × AI** 的研究资源清单：从空间与时序推理，到说明书理解、三维生成、装配规划和机器人执行。
 
-**专题精简版：** [LEGO 功能设计 Agent：10 项直接相关资源](docs/FOCUSED_LEGO_DESIGN.zh-CN.md) — 功能需求、软件建模、装配与功能验证；含数据和 benchmark 入口。
+**专题研究指南：** [LEGO 功能设计 Agent](docs/FOCUSED_LEGO_DESIGN.zh-CN.md) · [English](docs/FOCUSED_LEGO_DESIGN.md) — 20 项重点资源、数据与 benchmark、通俗说明和实验路线。
 
 主目录最近整理：**2026-11-22**。共 **64 个独立条目**，其中 **35 篇论文**、**29 个数据／基准条目**。同一项目可同时提供论文、数据、代码和视频，不重复计为独立项目；专题补充资源另列。
 
