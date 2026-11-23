@@ -104,7 +104,8 @@ def readme(lang):
     if zh:
         lines += [
             '面向 **LEGO / 咬合积木 × AI** 的研究资源清单：从空间与时序推理，到说明书理解、三维生成、装配规划和机器人执行。', '',
-            f'最近整理：**{CATALOG["updated"]}**。共 **{len(RESOURCES)} 个独立条目**，其中 **{n_papers} 篇论文**、**{n_data} 个数据／基准条目**。同一项目可同时提供论文、数据、代码和视频，不重复计为独立项目。', '',
+            '**专题精简版：** [LEGO 功能设计 Agent：10 项直接相关资源](docs/FOCUSED_LEGO_DESIGN.zh-CN.md) — 功能需求、软件建模、装配与功能验证；含数据和 benchmark 入口。', '',
+            f'主目录最近整理：**{CATALOG["updated"]}**。共 **{len(RESOURCES)} 个独立条目**，其中 **{n_papers} 篇论文**、**{n_data} 个数据／基准条目**。同一项目可同时提供论文、数据、代码和视频，不重复计为独立项目；专题补充资源另列。', '',
             '优先收录原论文、作者项目页、官方代码和数据入口。年份优先采用首个预印本年份，正式发表信息另列；摘要为本清单重新撰写。链接核对不等于代码复现或数据完整下载。', '',
             '**从这里开始：** [训练数据与 Benchmark](#datasets-benchmarks) · [中文阅读路线与研究切入点](docs/RESEARCH_GUIDE.zh-CN.md) · [BibTeX](papers.bib) · [机器可读目录](data/resources.json) · [核验说明](docs/VERIFICATION.md)', '',
             '## 快速选读', '',
@@ -119,7 +120,8 @@ def readme(lang):
     else:
         lines += [
             'A curated research list for **LEGO / interlocking bricks × AI**: spatial and temporal reasoning, visual manuals, 3D generation, assembly planning, and robot execution.', '',
-            f'Last curated: **{CATALOG["updated"]}**. **{len(RESOURCES)} unique entries**, including **{n_papers} papers** and **{n_data} data / benchmark entries**. A project may provide several artifact types; these counts overlap.', '',
+            '**Focused shortlist (Chinese):** [10 resources for functional LEGO design agents](docs/FOCUSED_LEGO_DESIGN.zh-CN.md) — requirements, software-based modeling, assembly and functional verification, with data and benchmark links.', '',
+            f'Main catalog last curated: **{CATALOG["updated"]}**. **{len(RESOURCES)} unique entries**, including **{n_papers} papers** and **{n_data} data / benchmark entries**. A project may provide several artifact types; these counts overlap. Additional shortlist resources are listed separately.', '',
             'We prioritize original papers, author project pages, official repositories and dataset records. Years generally indicate the first preprint, with publication venues listed separately. Descriptions are original summaries. Link review does not imply successful reproduction or complete dataset download.', '',
             '**Start here:** [Training datasets and benchmarks](#datasets-benchmarks) · [Chinese research guide](docs/RESEARCH_GUIDE.zh-CN.md) · [BibTeX](papers.bib) · [Machine-readable catalog](data/resources.json) · [Verification notes](docs/VERIFICATION.md)', '',
             '## Start here', '',
